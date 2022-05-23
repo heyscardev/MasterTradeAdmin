@@ -1,0 +1,289 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:av="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="av">
+    <!--  iconos del sistema  -->
+    <ImageBrush
+        x:Key="imagen_btn_cerrar"
+        ImageSource="/Vista/Recursos/Iconos/IconoXRed.png"
+        Stretch="Fill" />
+    <ImageBrush x:Key="icono_cerrar_azul" ImageSource="/Vista/Recursos/Iconos/IconoXBlue.png" />
+    <ImageBrush x:Key="icono_Cliente_pricipal" ImageSource="/Vista/Recursos/Iconos/IconoCliente.png" />
+    <!--  tipos de letras del sistema  -->
+    <FontFamily x:Key="roboto_family">/Vista/Recursos/Letras/Roboto-Regular.ttf #Roboto</FontFamily>
+    <!--  colores del sistema  -->
+    <SolidColorBrush x:Key="azul1" Color="#1C3A4A" />
+    <SolidColorBrush x:Key="amarillo1" Color="#FFFFD261" />
+    <SolidColorBrush x:Key="amarillo2" Color="#FFC08900" />
+    <!--  componentes personalizados del sistema  -->
+    <ControlTemplate x:Key="btnAzul" TargetType="{x:Type Button}">
+        <Grid>
+            <Rectangle
+                Width="100"
+                Height="30"
+                Margin="0,0,0,0"
+                Fill="#FF1C3A4A"
+                RadiusX="10"
+                RadiusY="10" />
+            <TextBlock
+                Margin="0,0,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontFamily="Franklin Gothic Book"
+                FontSize="16"
+                FontWeight="Bold"
+                Foreground="White"
+                Text="{TemplateBinding Content}"
+                TextWrapping="Wrap" />
+        </Grid>
+    </ControlTemplate>
+
+    <!--  TEXBOXES  -->
+    <ControlTemplate x:Key="TextBoxTemplate1" TargetType="{x:Type TextBox}">
+        <Border
+            x:Name="borde"
+            Width="{TemplateBinding Width}"
+            Height="{TemplateBinding Height}"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="0"
+            CornerRadius="5">
+
+            <!--<Border.Effect>
+                <DropShadowEffect BlurRadius="10" Color="#FF1C3A4A" />
+            </Border.Effect>-->
+
+            <Grid>
+                <TextBlock
+                    x:Name="textico"
+                    Margin="2"
+                    Padding="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    Cursor="{TemplateBinding Cursor}"
+                    FontFamily="Bahnschrift Condensed"
+                    FontSize="{TemplateBinding FontSize}"
+                    Foreground="{TemplateBinding Foreground}"
+                    Text="{TemplateBinding Text}"
+                    TextAlignment="Right"
+                    ToolTip="{TemplateBinding ToolTip}" />
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <MultiTrigger>
+
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsFocused" Value="true" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="borde" Property="Background" Value="#1C3A4A" />
+                <Setter TargetName="textico" Property="Foreground" Value="White" />
+                <Setter TargetName="textico" Property="HorizontalAlignment" Value="Right" />
+            </MultiTrigger>
+
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+
+    <ControlTemplate x:Key="btnAmarillo" TargetType="{x:Type Button}">
+        <Grid>
+            <Rectangle
+                Width="100"
+                Height="30"
+                Margin="0,0,0,0"
+                Fill="#C89315"
+                RadiusX="10"
+                RadiusY="10"
+                Stroke="#1C3A4A"
+                StrokeThickness="4" />
+            <TextBlock
+                Margin="0,0,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontFamily="Franklin Gothic Book"
+                FontSize="16"
+                FontWeight="Bold"
+                Foreground="White"
+                Text="{TemplateBinding Content}"
+                TextWrapping="Wrap" />
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualStateGroup.Transitions>
+                        <VisualTransition GeneratedDuration="00:00:00">
+                            <VisualTransition.GeneratedEasingFunction>
+                                <BounceEase EasingMode="EaseInOut" />
+                            </VisualTransition.GeneratedEasingFunction>
+                        </VisualTransition>
+                    </VisualStateGroup.Transitions>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="1C3A4A" TargetType="{x:Type Button}">
+        <Grid>
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Text="TextBlock"
+                TextWrapping="Wrap" />
+        </Grid>
+    </ControlTemplate>
+    <!--  estilos fronted  -->
+    <Style x:Key="tablas" TargetType="DataGrid">
+        <Setter Property="RowHeight" Value="50" />
+        <Setter Property="RowBackground" Value="{StaticResource amarillo1}" />
+        <Setter Property="GridLinesVisibility" Value="None" />
+        <Setter Property="Foreground" Value="{StaticResource azul1}" />
+        <Setter Property="AlternatingRowBackground" Value="{StaticResource amarillo2}" />
+        <Setter Property="FontFamily" Value="{StaticResource roboto_family}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="AutoGenerateColumns" Value="False" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="AlternationCount" Value="2" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+
+
+
+        <Setter Property="RowStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Margin" Value="2" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="#99333333" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Background" Value="{StaticResource azul1}" />
+                            <Setter Property="BorderThickness" Value="2" />
+                            <Setter Property="BorderBrush" Value="White" />
+                            <Setter Property="Foreground" Value="{StaticResource azul1}" />
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ColumnHeaderStyle">
+            <Setter.Value>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="{StaticResource amarillo2}" />
+                    <Setter Property="Height" Value="50" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="FontSize" Value="16" />
+                    <Setter Property="Margin" Value="0,0,10,0" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CellStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="HorizontalAlignment" Value="Stretch" />
+
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="BorderThickness" Value="0" />
+                            <Setter Property="Background" Value="{StaticResource azul1}" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Setter.Value>
+        </Setter>
+
+
+
+    </Style>
+    <Style x:Key="font_style" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="View/Recursos/Roboto-Regular.ttf #Roboto" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Foreground" Value="#C08900" />
+        <Setter Property="FontSize" Value="20" />
+
+    </Style>
+
+    <Style x:Key="tt_style" TargetType="ToolTip">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToolTip">
+                    <Grid
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Background="Transparent">
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="2"
+                            CornerRadius="5">
+                            <TextBlock
+                                Margin="10"
+                                VerticalAlignment="Center"
+                                FontFamily="{TemplateBinding FontFamily}"
+                                FontSize="{TemplateBinding FontSize}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Text="{TemplateBinding Property=Content}" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Placement" Value="Right" />
+        <Setter Property="Height" Value="AUTO" />
+        <Setter Property="Width" Value="AUTO" />
+        <Setter Property="Margin" Value="20,0,0,0" />
+        <Setter Property="Background" Value="{StaticResource azul1}" />
+        <Setter Property="BorderBrush" Value="{StaticResource amarillo1}" />
+        <Setter Property="Foreground" Value="{StaticResource amarillo1}" />
+        <Setter Property="FontFamily" Value="View/Recursos/Roboto-Regular.ttf #Roboto" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HorizontalOffset" Value="15" />
+        <Setter Property="VerticalOffset" Value="6" />
+        <Setter Property="HasDropShadow" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="text_formulario" TargetType="Label">
+        <Setter Property="Foreground" Value="{StaticResource azul1}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="{StaticResource roboto_family}" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect
+                    BlurRadius="20"
+                    Direction="250"
+                    ShadowDepth="3" />
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+    <Style x:Key="btn_cerrar" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        x:Name="button"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="0"
+                        SnapsToDevicePixels="True" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="button" Property="Background" Value="{StaticResource imagen_btn_cerrar}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,129 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Vista\Recursos\Iconos\Amarillos\add-user.png" />
+    <None Remove="Vista\Recursos\Iconos\Amarillos\ban.png" />
+    <None Remove="Vista\Recursos\Iconos\Amarillos\Clientes.png" />
+    <None Remove="Vista\Recursos\Iconos\Amarillos\Comprar.png" />
+    <None Remove="Vista\Recursos\Iconos\Amarillos\Inicio.png" />
+    <None Remove="Vista\Recursos\Iconos\Amarillos\Productos.png" />
+    <None Remove="Vista\Recursos\Iconos\Amarillos\Proveedores.png" />
+    <None Remove="Vista\Recursos\Iconos\Amarillos\save-file.png" />
+    <None Remove="Vista\Recursos\Iconos\Amarillos\search.png" />
+    <None Remove="Vista\Recursos\Iconos\Amarillos\trash.png" />
+    <None Remove="Vista\Recursos\Iconos\Amarillos\upload.png" />
+    <None Remove="Vista\Recursos\Iconos\Amarillos\Vender.png" />
+    <None Remove="Vista\Recursos\Iconos\Azules\add-user.png" />
+    <None Remove="Vista\Recursos\Iconos\Azules\ban.png" />
+    <None Remove="Vista\Recursos\Iconos\Azules\save-file.png" />
+    <None Remove="Vista\Recursos\Iconos\Azules\search.png" />
+    <None Remove="Vista\Recursos\Iconos\Azules\trash.png" />
+    <None Remove="Vista\Recursos\Iconos\Azules\upload.png" />
+    <None Remove="Vista\Recursos\Iconos\Blancos\add-user.png" />
+    <None Remove="Vista\Recursos\Iconos\Blancos\ban.png" />
+    <None Remove="Vista\Recursos\Iconos\Blancos\save-file.png" />
+    <None Remove="Vista\Recursos\Iconos\Blancos\search.png" />
+    <None Remove="Vista\Recursos\Iconos\Blancos\trash.png" />
+    <None Remove="Vista\Recursos\Iconos\Blancos\upload.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoCasa.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoCerrar.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoCerrarSesion.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoCliente.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoCompra.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoCompraAdd.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoImageAdd.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoMenu.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoProducto.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoReporte.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoVentas.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoXBlue.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoXRed.png" />
+    <None Remove="Vista\Recursos\Imagenes\Avatar.png" />
+    <None Remove="Vista\Recursos\Imagenes\Fondo.jpg" />
+    <None Remove="Vista\Recursos\Imagenes\Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\..\Program Files\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Vista\Recursos\Iconos\Amarillos\add-user.png" />
+    <Resource Include="Vista\Recursos\Iconos\Amarillos\ban.png" />
+    <Resource Include="Vista\Recursos\Iconos\Amarillos\Clientes.png" />
+    <Resource Include="Vista\Recursos\Iconos\Amarillos\Comprar.png" />
+    <Resource Include="Vista\Recursos\Iconos\Amarillos\Inicio.png" />
+    <Resource Include="Vista\Recursos\Iconos\Amarillos\Productos.png" />
+    <Resource Include="Vista\Recursos\Iconos\Amarillos\Proveedores.png" />
+    <Resource Include="Vista\Recursos\Iconos\Amarillos\save-file.png" />
+    <Resource Include="Vista\Recursos\Iconos\Amarillos\search.png" />
+    <Resource Include="Vista\Recursos\Iconos\Amarillos\trash.png" />
+    <Resource Include="Vista\Recursos\Iconos\Amarillos\upload.png" />
+    <Resource Include="Vista\Recursos\Iconos\Amarillos\Vender.png" />
+    <Resource Include="Vista\Recursos\Iconos\Azules\add-user.png" />
+    <Resource Include="Vista\Recursos\Iconos\Azules\ban.png" />
+    <Resource Include="Vista\Recursos\Iconos\Azules\save-file.png" />
+    <Resource Include="Vista\Recursos\Iconos\Azules\search.png" />
+    <Resource Include="Vista\Recursos\Iconos\Azules\trash.png" />
+    <Resource Include="Vista\Recursos\Iconos\Azules\upload.png" />
+    <Resource Include="Vista\Recursos\Iconos\Blancos\add-user.png" />
+    <Resource Include="Vista\Recursos\Iconos\Blancos\ban.png" />
+    <Resource Include="Vista\Recursos\Iconos\Blancos\save-file.png" />
+    <Resource Include="Vista\Recursos\Iconos\Blancos\search.png" />
+    <Resource Include="Vista\Recursos\Iconos\Blancos\trash.png" />
+    <Resource Include="Vista\Recursos\Iconos\Blancos\upload.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoCerrarSesion.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoCasa.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoCerrar.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoCliente.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoCompra.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoCompraAdd.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoImageAdd.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoMenu.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoProducto.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoReporte.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoVentas.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoXBlue.png" />
+    <Resource Include="Vista\Recursos\Iconos\IconoXRed.png" />
+    <Resource Include="Vista\Recursos\Imagenes\Avatar.png" />
+    <Resource Include="Vista\Recursos\Imagenes\Fondo.jpg" />
+    <Resource Include="Vista\Recursos\Imagenes\Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Configuraciones.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

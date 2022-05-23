@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  iconos del sistema  -->
+    <ImageBrush
+        x:Key="imagen_btn_cerrar"
+        ImageSource="/Vista/Recursos/Iconos/IconoXRed.png"
+        Stretch="Fill" />
+    <ImageBrush x:Key="icono_cerrar_azul" ImageSource="/Vista/Recursos/Iconos/IconoXBlue.png" />
+    <BitmapImage x:Key="icono_cliente_pricipal" UriSource="/Vista/Recursos/Iconos/IconoCliente.png" />
+    <BitmapImage x:Key="icono_casa" UriSource="/Vista/Recursos/Iconos/Amarillos/Inicio.png" />
+    <BitmapImage x:Key="icono_clientes" UriSource="/Vista/Recursos/Iconos/Amarillos/Clientes.png" />
+    <BitmapImage x:Key="icono_proveedores" UriSource="/Vista/Recursos/Iconos/Amarillos/Proveedores.png" />
+    <BitmapImage x:Key="icono_cerrar_sesion" UriSource="/Vista/Recursos/Iconos/IconoCerrarSesion.png" />
+    <BitmapImage x:Key="icono_compra" UriSource="/Vista/Recursos/Iconos/Amarillos/Comprar.png" />
+    <BitmapImage x:Key="icono_compra_add" UriSource="/Vista/Recursos/Iconos/IconoCompraAdd.png" />
+    <BitmapImage x:Key="icono_image_add" UriSource="/Vista/Recursos/Iconos/IconoImageAdd.png" />
+    <ImageBrush x:Key="icono_menu" ImageSource="/Vista/Recursos/Iconos/IconoMenu.png" />
+    <BitmapImage x:Key="icono_producto" UriSource="/Vista/Recursos/Iconos/Amarillos/Productos.png" />
+    <BitmapImage x:Key="icono_reporte" UriSource="/Vista/Recursos/Iconos/IconoReporte.png" />
+    <BitmapImage x:Key="icono_venta" UriSource="/Vista/Recursos/Iconos/Amarillos/Vender.png" />
+    <BitmapImage x:Key="icono_anadir" UriSource="/Vista/Recursos/Iconos/Amarillos/add-user.png" />
+    <BitmapImage x:Key="icono_anadir_azul" UriSource="/Vista/Recursos/Iconos/Azules/add-user.png" />
+
+</ResourceDictionary>

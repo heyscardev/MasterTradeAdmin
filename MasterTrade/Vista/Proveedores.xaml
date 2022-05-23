@@ -1,0 +1,272 @@
+﻿<UserControl
+    x:Class="MasterTrade.Vista.Proveedores"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MasterTrade.Vista"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Background="Transparent"
+    mc:Ignorable="d">
+    <Border Background="White" CornerRadius="15">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="550" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="300" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="0,5,0,0"
+                HorizontalAlignment="Center"
+                Content="REGISTRAR PROVEEDOR:"
+                FontSize="40"
+                Foreground="{StaticResource azul1}" />
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel
+                    Grid.Column="0"
+                    Width="200"
+                    Height="270"
+                    Margin="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="14"
+                        Text="DOCUMENTO DE IDENTIDAD" />
+                    <StackPanel
+                        Width="AUTO"
+                        Height="AUTO"
+                        Orientation="Horizontal">
+                        <ComboBox
+                            x:Name="cbxIdentificacion"
+                            Width="50"
+                            Height="35"
+                            Margin="0,0,0,20"
+                            Background="#FFC5C71A"
+                            SelectedIndex="0">
+                            <ComboBoxItem>V</ComboBoxItem>
+                            <ComboBoxItem>E</ComboBoxItem>
+                            <ComboBoxItem>J</ComboBoxItem>
+                            <ComboBoxItem>G</ComboBoxItem>
+                            <ComboBoxItem>Otro</ComboBoxItem>
+                        </ComboBox>
+                        <TextBox
+                            x:Name="tbxIdentificacion"
+                            Width="142"
+                            Height="35"
+                            Margin="5,0,0,20"
+                            KeyDown="tbxSoloNumeros_KeyDown"
+                            KeyUp="tbxValidaVacio"
+                            MaxLength="20"
+                            Text="Documento de Identidad" />
+                    </StackPanel>
+
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="14"
+                        Text="NOMBRE COMPLETO" />
+                    <TextBox
+                        x:Name="tbxNombre"
+                        Width="AUTO"
+                        Height="35"
+                        Margin="0,0,0,20"
+                        KeyDown="tbxSoloLetrasn_KeyDown"
+                        KeyUp="tbxValidaVacio"
+                        MaxLength="80"
+                        Text="Ingrese su nombre completo" />
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="14"
+                        Text="FECHA DE NACIMIENTO" />
+                    <DatePicker
+                        x:Name="pickFNacimento"
+                        Height="35"
+                        Margin="0,0,0,20"
+                        Cursor="Hand">
+                        <DatePicker.Resources>
+                            <Style TargetType="DatePickerTextBox">
+                                <Setter Property="IsReadOnly" Value="True" />
+                            </Style>
+                        </DatePicker.Resources>
+                    </DatePicker>
+                </StackPanel>
+
+                <StackPanel
+                    Grid.Column="1"
+                    Width="200"
+                    Height="270"
+                    Margin="0,0,0,15"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="14"
+                        Text="DIRECCIÓN" />
+                    <TextBox
+                        x:Name="tbxDireccion"
+                        Width="AUTO"
+                        Height="35"
+                        Margin="0,0,0,20"
+                        MaxLength="250"
+                        Text="Ingrese Dirección" />
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="14"
+                        Text="TELÉFONO" />
+                    <StackPanel
+                        Width="AUTO"
+                        Height="AUTO"
+                        Orientation="Horizontal">
+                        <ComboBox
+                            x:Name="cbxTelefono"
+                            Width="50"
+                            Height="35"
+                            Margin="0,0,0,20" />
+
+                        <TextBox
+                            x:Name="tbxTelefono"
+                            Width="142"
+                            Height="35"
+                            Margin="5,0,0,20"
+                            KeyDown="tbxSoloNumeros_KeyDown"
+                            MaxLength="20"
+                            MaxLines="2147483645"
+                            Text="Número telefónico" />
+                    </StackPanel>
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="14"
+                        Text="CORREO ELECTRÓNICO" />
+                    <TextBox
+                        x:Name="tbxCorreo"
+                        Width="AUTO"
+                        Height="35"
+                        KeyUp="tbxValidaCorreo"
+                        MaxLength="200"
+                        Text="Ingrese correo electrónico" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Column="0"
+                    Margin="5"
+                    Style="{StaticResource EstiloBotonesAcciones}">
+                    <Button.ToolTip>
+                        <ToolTip Content="BUSCAR PROVEEDOR" Style="{StaticResource tt_style}" />
+                    </Button.ToolTip>
+                </Button>
+                <Button
+                    Grid.Column="1"
+                    Margin="5"
+                    Style="{StaticResource EstiloBotonesAcciones}">
+                    <Button.ToolTip>
+                        <ToolTip Content="REGISTAR PROVEEDOR" Style="{StaticResource tt_style}" />
+                    </Button.ToolTip>
+                </Button>
+                <Button
+                    Grid.Column="2"
+                    Margin="5"
+                    Style="{StaticResource EstiloBotonesAcciones}">
+                    <Button.ToolTip>
+                        <ToolTip Content="CANCELAR" Style="{StaticResource tt_style}" />
+                    </Button.ToolTip>
+                </Button>
+                <Button
+                    Grid.Column="3"
+                    Margin="5"
+                    Style="{StaticResource EstiloBotonesAcciones}">
+                    <Button.ToolTip>
+                        <ToolTip Content="GUARDAR PROVEEDOR" Style="{StaticResource tt_style}" />
+                    </Button.ToolTip>
+                </Button>
+                <Button
+                    x:Name="btnGuardar"
+                    Grid.Column="4"
+                    Margin="5"
+                    Click="btnGuardar_Click"
+                    Style="{StaticResource EstiloBotonesAcciones}">
+                    <Button.ToolTip>
+                        <ToolTip Content="ACTUALIZAR PROVEEDOR" Style="{StaticResource tt_style}" />
+                    </Button.ToolTip>
+                </Button>
+                <Button
+                    Grid.Column="5"
+                    Margin="5"
+                    Style="{StaticResource EstiloBotonesAcciones}">
+                    <Button.ToolTip>
+                        <ToolTip Content="ELIMINAR PROVEEDOR" Style="{StaticResource tt_style}" />
+                    </Button.ToolTip>
+                </Button>
+            </Grid>
+
+            <Grid
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="20" />
+                </Grid.RowDefinitions>
+
+                <StackPanel
+                    Grid.Row="0"
+                    Margin="20"
+                    Orientation="Vertical">
+                    <Image
+                        x:Name="imagen"
+                        Width="150"
+                        Height="150"
+                        Margin="10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Vista/Recursos/Iconos/IconoImageAdd.png" />
+                    <Button
+                        x:Name="btnAddImagen"
+                        Height="50"
+                        BorderBrush="Transparent"
+                        Click="btnAddImagen_Click"
+                        Content="AGREGAR IMAGEN"
+                        Foreground="Blue">
+                        <Button.Background>
+                            <ImageBrush />
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+                <Button
+                    Grid.Row="1"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Content="Registros del cliente&gt;"
+                    Foreground="Blue" />
+            </Grid>
+
+        </Grid>
+
+    </Border>
+</UserControl>

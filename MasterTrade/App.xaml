@@ -1,0 +1,48 @@
+﻿<Application
+    x:Class="MasterTrade.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MasterTrade"
+    xmlns:viewModel="clr-namespace:MasterTrade.VistaModelo"
+    xmlns:view="clr-namespace:MasterTrade.Vista.Reuitilizable"
+    xmlns:view2="clr-namespace:MasterTrade.Vista"
+    StartupUri="/Vista/Main.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--  Acceso a diccionario de estilos  -->
+                <ResourceDictionary Source="/Vista/Recursos/Estilos/IconosDiccionario.xaml"/>
+                <ResourceDictionary Source="/Vista/Recursos/Estilos/EstilosDiccionario.xaml"/>
+                <ResourceDictionary Source="/Vista/Recursos/Estilos/EstiloBotonesMenu.xaml"/>
+                <ResourceDictionary Source="/Vista/Recursos/Estilos/EstiloTextBoxes.xaml"/>
+                <ResourceDictionary Source="/Vista/Recursos/Estilos/EstiloBotonesAcciones.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--VISTAS-->
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_Inicio}">
+                <view2:Inicio/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_Registro}">
+                <view:Registro/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_Proveedores}">
+                <view2:Proveedores/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_Productos}">
+                <view2:Productos/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_Comprar}">
+                <view2:Comprar/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_Vender}">
+                <view2:Vender/>
+            </DataTemplate>
+            <!--VISTAS-->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

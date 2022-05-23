@@ -1,0 +1,236 @@
+﻿<UserControl
+    x:Class="MasterTrade.Vista.Reutilizable.InputDataEntidad"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MasterTrade.Vista.Reutilizable"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="500"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <Grid Margin="10" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+        <!--  grid razon social  -->
+        <Grid
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                Content="Razón Social o Nombre"
+                Style="{StaticResource text_formulario}" />
+            <TextBox
+                x:Name="tb_razon_social"
+                Grid.Row="1"
+                Background="#f4f4f4"
+                BorderBrush="Black"
+                FontSize="16"
+                Foreground="#1C3A4A"
+                MaxLength="80"
+                PreviewKeyDown="Text_Box_SoloLetras"
+                Template="{DynamicResource TextBoxTemplate1}"
+                TextChanged="TextBox_TextChanged"
+                ToolTip="nombre de cliente o razon social en caso de empresa" />
+        </Grid>
+        <!--  grid identificaciom  -->
+        <Grid
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ComboBox
+                x:Name="combo_document"
+                Grid.Row="1"
+                Grid.Column="0">
+                <ComboBoxItem>V</ComboBoxItem>
+                <ComboBoxItem>E</ComboBoxItem>
+                <ComboBoxItem>J</ComboBoxItem>
+                <ComboBoxItem>G</ComboBoxItem>
+                <ComboBoxItem>Otro</ComboBoxItem>
+            </ComboBox>
+            <Label
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Content="Numero de Identificación"
+                Style="{StaticResource text_formulario}" />
+            <TextBox
+                x:Name="tb_identify_document"
+                Grid.Row="1"
+                Grid.Column="1"
+                Background="#f4f4f4"
+                BorderBrush="Black"
+                FontSize="16"
+                Foreground="#1C3A4A"
+                MaxLength="20"
+                PreviewKeyDown="Text_Box_Solo_Numeros"
+                Template="{DynamicResource TextBoxTemplate1}"
+                TextChanged="TextBox_TextChanged"
+                ToolTip="rif o cedula solo numero" />
+        </Grid>
+        <Grid
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                Content="Correo"
+                Style="{StaticResource text_formulario}" />
+            <TextBox
+                x:Name="tb_correo"
+                Grid.Row="1"
+                Padding="0"
+                Background="#f4f4f4"
+                BorderBrush="Black"
+                FontSize="16"
+                Foreground="#1C3A4A"
+                MaxLength="200"
+                Template="{DynamicResource TextBoxTemplate1}"
+                TextChanged="Text_Box_Is_Correo"
+                ToolTip="correo debe lleva @xxx.xx" />
+        </Grid>
+        <Grid
+            Grid.Row="4"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                Content="Direccion"
+                Style="{StaticResource text_formulario}" />
+            <TextBox
+                x:Name="tb_direccion"
+                Grid.Row="1"
+                Background="#f4f4f4"
+                BorderBrush="Black"
+                FontSize="24"
+                Foreground="#1C3A4A"
+                MaxLength="250"
+                Template="{DynamicResource TextBoxTemplate1}"
+                TextChanged="TextBox_TextChanged"
+                ToolTip="direccion detallada" />
+        </Grid>
+        <Grid
+            Grid.Row="0"
+            Grid.RowSpan="4"
+            Grid.Column="1">
+            <Grid.RowDefinitions>
+
+                <RowDefinition />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+            <Border
+                Grid.Row="0"
+                MaxWidth="125"
+                MaxHeight="140"
+                BorderBrush="#FF1C3A4A"
+                BorderThickness="15">
+
+                <Image
+                    x:Name="imagen"
+                    MinWidth="100"
+                    MinHeight="100"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Cursor="Hand"
+                    MouseDown="imagen_MouseDown"
+                    Source="{StaticResource icono_image_add}"
+                    Stretch="UniformToFill" />
+            </Border>
+            <Button
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Click="Button_CargarImagen_Click"
+                Content="Cargar"
+                Template="{StaticResource btnAzul}" />
+
+
+        </Grid>
+
+        <!--  grid telefono  -->
+        <Grid
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                Content="Telefono"
+                Style="{StaticResource text_formulario}" />
+            <TextBox
+                x:Name="tb_telefono"
+                Grid.Row="1"
+                Background="#f4f4f4"
+                BorderBrush="Black"
+                FontSize="16"
+                Foreground="#1C3A4A"
+                MaxLength="20"
+                PreviewKeyDown="Text_Box_Solo_Numeros_telefono"
+                Template="{DynamicResource TextBoxTemplate1}"
+                ToolTip="telefono en formato +xx xxxxxxxxx" />
+        </Grid>
+        <!--  stack botones  -->
+        <StackPanel
+            Grid.Row="6"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <Button Click="Button_Cancelar_Click" Template="{StaticResource btnAmarillo}">Cancelar</Button>
+
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="6"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+
+            <Button Click="Button_Guardar_Click" Template="{StaticResource btnAzul}">Guardar</Button>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
