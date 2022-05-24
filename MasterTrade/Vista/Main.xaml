@@ -90,7 +90,7 @@
                                                 BeginTime="0:0:0"
                                                 Storyboard.TargetName="nav_pn1"
                                                 Storyboard.TargetProperty="Width"
-                                                From="180"
+                                                From="205"
                                                 To="65"
                                                 Duration="0:0:0.2"/>
                                         </Storyboard>
@@ -107,7 +107,7 @@
                                                 Storyboard.TargetName="nav_pn1"
                                                 Storyboard.TargetProperty="Width"
                                                 From="65"
-                                                To="180"
+                                                To="205"
                                                 Duration="0:0:0.3" />
                                         </Storyboard>
                                     </BeginStoryboard>
@@ -135,26 +135,20 @@
                             HorizontalAlignment="Left"
                             MouseEnter="ListViewItem_MouseEnter">
 
-                            <StackPanel Width="230" Orientation="Horizontal">
-                                <Image Width="35"
-                                       Height="35"
-                                       Margin="12,0,12,0"
-                                       Source="{StaticResource icono_casa}"
-                                       Stretch="Fill"/>
-
-                                <RadioButton Content="INICIO"
+                            <RadioButton x:Name="rbttnInicio"
+                                         Content="INICIO"
                                          Height="50"
                                          FontSize="14"
                                          IsChecked="True"
                                          Style="{StaticResource EstiloBotonesMenu}"
                                          GroupName="Botones_Menu"
                                          Command="{Binding VistaInicioComando}"/>
-                            </StackPanel>
-                            
                             
                             <!--  tooltip para menu contraido  -->
                             <ListViewItem.ToolTip>
-                                <ToolTip Content="INICIO" Style="{StaticResource tt_style}" />
+                                <ToolTip Content="INICIO"
+                                         Style="{StaticResource tt_style}"
+                                         Placement="Right"/>
                             </ListViewItem.ToolTip>
                         </ListViewItem>
 
@@ -164,25 +158,18 @@
                             HorizontalAlignment="Left"
                             MouseEnter="ListViewItem_MouseEnter">
 
-                            <StackPanel Width="230" Orientation="Horizontal">
-                                <Image Width="35"
-                                       Height="35"
-                                       Margin="12,0,12,0"
-                                       Source="{StaticResource icono_clientes}"
-                                       Stretch="Fill"/>
-
-                                <RadioButton Content="CLIENTES"
+                            <RadioButton Content="CLIENTES"
                                          Height="50"
                                          FontSize="14"
-                                         Style="{StaticResource EstiloBotonesMenu}"
+                                         Style="{StaticResource MenuClientes}"
                                          GroupName="Botones_Menu"
                                          Command="{Binding VistaRegistroComando}"/>
-                            </StackPanel>
-
-
+                        
                             <!--  tooltip para menu contraido  -->
                             <ListViewItem.ToolTip>
-                                <ToolTip Content="CLIENTES" Style="{StaticResource tt_style}" />
+                                <ToolTip Content="CLIENTES"
+                                         Style="{StaticResource tt_style}"
+                                         Placement="Right"/>
                             </ListViewItem.ToolTip>
                         </ListViewItem>
                         
@@ -192,27 +179,20 @@
                             HorizontalAlignment="Left"
                             MouseEnter="ListViewItem_MouseEnter">
 
-                            <StackPanel Width="230" Orientation="Horizontal">
-                                <Image
-                                    Width="35"
-                                    Height="35"
-                                    Margin="12,0,12,0"
-                                    Source="{StaticResource icono_proveedores}"
-                                    Stretch="Fill" />
-                                <RadioButton Content="PROVEEDORES"
+                            <RadioButton Content="PROVEEDORES"
                                          Height="50"
                                          FontSize="14"
-                                         Style="{StaticResource EstiloBotonesMenu}"
+                                         Style="{StaticResource MenuProveedores}"
                                          GroupName="Botones_Menu"
                                          Command="{Binding VistaProveedoresComando}"/>
-                            </StackPanel>
                             
                             <!--  tooltip para menu contraido  -->
                             <ListViewItem.ToolTip>
                                 <ToolTip
                                     x:Name="tt_Clientes"
                                     Content="PROVEEDORES"
-                                    Style="{StaticResource tt_style}" />
+                                    Style="{StaticResource tt_style}"
+                                    Placement="Right"/>
                             </ListViewItem.ToolTip>
                         </ListViewItem>
                         
@@ -222,25 +202,18 @@
                             HorizontalAlignment="Left"
                             MouseEnter="ListViewItem_MouseEnter">
 
-                            <StackPanel Width="230" Orientation="Horizontal">
-                                <Image
-                                    Width="35"
-                                    Height="35"
-                                    Margin="12,0,12,0"
-                                    Source="{StaticResource icono_producto}"
-                                    Stretch="Fill" />
-                                <RadioButton Content="PRODUCTOS"
+                            <RadioButton Content="PRODUCTOS"
                                          Height="50"
                                          FontSize="14"
-                                         Style="{StaticResource EstiloBotonesMenu}"
+                                         Style="{StaticResource MenuProductos}"
                                          GroupName="Botones_Menu"
                                          Command="{Binding VistaProductosComando}"/>
-                            </StackPanel>
-                            
                             
                             <!--  tooltip para menu contraido  -->
                             <ListViewItem.ToolTip>
-                                <ToolTip Content="PRODUCTOS" Style="{StaticResource tt_style}" />
+                                <ToolTip Content="PRODUCTOS"
+                                         Style="{StaticResource tt_style}"
+                                         Placement="Right"/>
                             </ListViewItem.ToolTip>
                         </ListViewItem>
                         
@@ -248,23 +221,19 @@
                             Margin="0,0,0,15"
                             HorizontalAlignment="Left"
                             MouseEnter="ListViewItem_MouseEnter">
-                            <StackPanel Width="230" Orientation="Horizontal">
-                                <Image Width="35"
-                                       Height="35"
-                                       Margin="12,0,12,0"
-                                       Source="{StaticResource icono_compra}"
-                                       Stretch="Fill"/>
 
-                                <RadioButton Content="COMPRAS"
+                            <RadioButton Content="COMPRAR"
                                          Height="50"
                                          FontSize="14"
-                                         Style="{StaticResource EstiloBotonesMenu}"
+                                         Style="{StaticResource MenuComprar}"
                                          GroupName="Botones_Menu"
                                          Command="{Binding VistaComprarComando}"/>
-                            </StackPanel>
+                            
                             <!--  tooltip para menu contraido  -->
                             <ListViewItem.ToolTip>
-                                <ToolTip Content="COMPRAR" Style="{StaticResource tt_style}" />
+                                <ToolTip Content="COMPRAR"
+                                         Style="{StaticResource tt_style}"
+                                         Placement="Right"/>
                             </ListViewItem.ToolTip>
                         </ListViewItem>
                         
@@ -272,23 +241,38 @@
                             Margin="0,0,0,15"
                             HorizontalAlignment="Left"
                             MouseEnter="ListViewItem_MouseEnter">
-                            <StackPanel Width="230" Orientation="Horizontal">
-                                <Image Width="35"
-                                       Height="35"
-                                       Margin="12,0,12,0"
-                                       Source="{StaticResource icono_venta}"
-                                       Stretch="Fill"/>
 
-                                <RadioButton Content="VENDER"
+                            <RadioButton Content="VENDER"
                                          Height="50"
                                          FontSize="14"
-                                         Style="{StaticResource EstiloBotonesMenu}"
+                                         Style="{StaticResource MenuVender}"
                                          GroupName="Botones_Menu"
                                          Command="{Binding VistaVenderComando}"/>
-                            </StackPanel>
+                            
                             <!--  tooltip para menu contraido  -->
                             <ListViewItem.ToolTip>
-                                <ToolTip Content="VENDER" Style="{StaticResource tt_style}" />
+                                <ToolTip Content="VENDER"
+                                         Style="{StaticResource tt_style}"
+                                         Placement="Right"/>
+                            </ListViewItem.ToolTip>
+                        </ListViewItem>
+
+                        <ListViewItem
+                            Margin="0,0,0,15"
+                            HorizontalAlignment="Left"
+                            MouseEnter="ListViewItem_MouseEnter">
+
+                            <RadioButton Content="CONFIGURACIÓN"
+                                         Height="50"
+                                         FontSize="14"
+                                         Style="{StaticResource MenuConfiguracion}"
+                                         GroupName="Botones_Menu"/>
+
+                            <!--  tooltip para menu contraido  -->
+                            <ListViewItem.ToolTip>
+                                <ToolTip Content="CONFIGURACIÓN"
+                                         Style="{StaticResource tt_style}"
+                                         Placement="Right"/>
                             </ListViewItem.ToolTip>
                         </ListViewItem>
                         <ListView.ItemContainerStyle>

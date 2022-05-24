@@ -10,8 +10,26 @@
                         <Grid VerticalAlignment="Stretch"
                               HorizontalAlignment="Stretch"
                               Background="Transparent">
-                                                       
-                            <Border CornerRadius="10"
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="AUTO"/>
+                                <ColumnDefinition Width="AUTO"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0"
+                                    CornerRadius="10"
+                                    Margin="0, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <Image x:Name="image_button"
+                                        Grid.Column="0"
+                                        Width="32"
+                                        Height="32"
+                                        Margin="12,0,12,0"
+                                        Source="{StaticResource icono_casa}"
+                                        Stretch="Fill"/>
+                            </Border>
+                            
+                            <Border Grid.Column="1"
+                                    CornerRadius="10"
+                                    Margin="5, 0, 5, 0"
                                     Background="{TemplateBinding Background}">
                                 <TextBlock Text="{TemplateBinding Property=Content}"
                                            Foreground="{TemplateBinding Foreground}"
@@ -19,6 +37,14 @@
                                            Margin="10"/>
                             </Border>
                         </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_casa_azul}" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_casa_azul}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -36,4 +62,383 @@
         </Style.Triggers>
 
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+           TargetType="{x:Type RadioButton}"
+           x:Key="MenuClientes">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="AUTO"/>
+                                <ColumnDefinition Width="AUTO"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0"
+                                    CornerRadius="10"
+                                    Margin="0, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <Image x:Name="image_button"
+                                        Grid.Column="0"
+                                        Width="32"
+                                        Height="32"
+                                        Margin="12,0,12,0"
+                                        Source="{StaticResource icono_clientes}"
+                                        Stretch="Fill"/>
+                            </Border>
+
+                            <Border Grid.Column="1"
+                                    CornerRadius="10"
+                                    Margin="5, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <TextBlock Text="{TemplateBinding Property=Content}"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           VerticalAlignment="Center"
+                                           Margin="10"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_clientes_azul}" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_clientes_azul}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#FFC08900"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style.Setters>
+
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="#1C3A4A"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+           TargetType="{x:Type RadioButton}"
+           x:Key="MenuProveedores">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="AUTO"/>
+                                <ColumnDefinition Width="AUTO"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0"
+                                    CornerRadius="10"
+                                    Margin="0, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <Image x:Name="image_button"
+                                        Grid.Column="0"
+                                        Width="32"
+                                        Height="32"
+                                        Margin="12,0,12,0"
+                                        Source="{StaticResource icono_proveedores}"
+                                        Stretch="Fill"/>
+                            </Border>
+
+                            <Border Grid.Column="1"
+                                    CornerRadius="10"
+                                    Margin="5, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <TextBlock Text="{TemplateBinding Property=Content}"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           VerticalAlignment="Center"
+                                           Margin="10"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_proveedores_azul}" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_proveedores_azul}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#FFC08900"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style.Setters>
+
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="#1C3A4A"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+           TargetType="{x:Type RadioButton}"
+           x:Key="MenuProductos">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="AUTO"/>
+                                <ColumnDefinition Width="AUTO"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0"
+                                    CornerRadius="10"
+                                    Margin="0, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <Image x:Name="image_button"
+                                        Grid.Column="0"
+                                        Width="32"
+                                        Height="32"
+                                        Margin="12,0,12,0"
+                                        Source="{StaticResource icono_producto}"
+                                        Stretch="Fill"/>
+                            </Border>
+
+                            <Border Grid.Column="1"
+                                    CornerRadius="10"
+                                    Margin="5, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <TextBlock Text="{TemplateBinding Property=Content}"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           VerticalAlignment="Center"
+                                           Margin="10"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_producto_azul}" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_producto_azul}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#FFC08900"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style.Setters>
+
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="#1C3A4A"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+           TargetType="{x:Type RadioButton}"
+           x:Key="MenuComprar">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="AUTO"/>
+                                <ColumnDefinition Width="AUTO"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0"
+                                    CornerRadius="10"
+                                    Margin="0, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <Image x:Name="image_button"
+                                        Grid.Column="0"
+                                        Width="32"
+                                        Height="32"
+                                        Margin="12,0,12,0"
+                                        Source="{StaticResource icono_compra}"
+                                        Stretch="Fill"/>
+                            </Border>
+
+                            <Border Grid.Column="1"
+                                    CornerRadius="10"
+                                    Margin="5, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <TextBlock Text="{TemplateBinding Property=Content}"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           VerticalAlignment="Center"
+                                           Margin="10"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_compra_azul}" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_compra_azul}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#FFC08900"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style.Setters>
+
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="#1C3A4A"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+           TargetType="{x:Type RadioButton}"
+           x:Key="MenuVender">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="AUTO"/>
+                                <ColumnDefinition Width="AUTO"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0"
+                                    CornerRadius="10"
+                                    Margin="0, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <Image x:Name="image_button"
+                                        Grid.Column="0"
+                                        Width="32"
+                                        Height="32"
+                                        Margin="12,0,12,0"
+                                        Source="{StaticResource icono_venta}"
+                                        Stretch="Fill"/>
+                            </Border>
+
+                            <Border Grid.Column="1"
+                                    CornerRadius="10"
+                                    Margin="5, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <TextBlock Text="{TemplateBinding Property=Content}"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           VerticalAlignment="Center"
+                                           Margin="10"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_venta_azul}" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_venta_azul}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#FFC08900"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style.Setters>
+
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="#1C3A4A"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+           TargetType="{x:Type RadioButton}"
+           x:Key="MenuConfiguracion">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="AUTO"/>
+                                <ColumnDefinition Width="AUTO"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0"
+                                    CornerRadius="10"
+                                    Margin="0, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <Image x:Name="image_button"
+                                        Grid.Column="0"
+                                        Width="32"
+                                        Height="32"
+                                        Margin="12,0,12,0"
+                                        Source="{StaticResource icono_ajustes}"
+                                        Stretch="Fill"/>
+                            </Border>
+
+                            <Border Grid.Column="1"
+                                    CornerRadius="10"
+                                    Margin="5, 0, 5, 0"
+                                    Background="{TemplateBinding Background}">
+                                <TextBlock Text="{TemplateBinding Property=Content}"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           VerticalAlignment="Center"
+                                           Margin="10"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_ajustes_azul}" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="image_button" Property="Source" Value="{StaticResource icono_ajustes_azul}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#FFC08900"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style.Setters>
+
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="#1C3A4A"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
 </ResourceDictionary>

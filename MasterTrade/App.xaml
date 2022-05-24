@@ -16,6 +16,7 @@
                 <ResourceDictionary Source="/Vista/Recursos/Estilos/EstiloBotonesMenu.xaml"/>
                 <ResourceDictionary Source="/Vista/Recursos/Estilos/EstiloTextBoxes.xaml"/>
                 <ResourceDictionary Source="/Vista/Recursos/Estilos/EstiloBotonesAcciones.xaml"/>
+                <ResourceDictionary Source="/Vista/Recursos/Estilos/Estilos_Labels.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <!--VISTAS-->

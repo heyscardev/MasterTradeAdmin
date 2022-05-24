@@ -85,9 +85,6 @@ namespace MasterTrade.Migrations
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime");
 
-                    b.Property<DateTime>("FechaNacimento")
-                        .HasColumnType("Date");
-
                     b.Property<string>("Imagen")
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
@@ -301,6 +298,10 @@ namespace MasterTrade.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("varchar(200)");
 
+                    b.Property<string>("Descripcion")
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
                     b.Property<string>("Direccion")
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
@@ -313,9 +314,6 @@ namespace MasterTrade.Migrations
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime");
-
-                    b.Property<DateTime>("FechaNacimento")
-                        .HasColumnType("Date");
 
                     b.Property<string>("Imagen")
                         .HasMaxLength(250)
@@ -378,9 +376,6 @@ namespace MasterTrade.Migrations
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime");
-
-                    b.Property<DateTime>("FechaNacimento")
-                        .HasColumnType("Date");
 
                     b.Property<string>("Imagen")
                         .HasMaxLength(250)

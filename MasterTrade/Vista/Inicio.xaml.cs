@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace MasterTrade.Vista
 {
@@ -23,6 +13,26 @@ namespace MasterTrade.Vista
         public Inicio()
         {
             InitializeComponent();
+        }
+
+        private void Label_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            DispatcherTimer dt = new DispatcherTimer();
+            dt.Interval = TimeSpan.FromSeconds(1);
+            dt.Tick += dtTicker;
+            dt.Start();
+        }
+
+        private void dtTicker(object? sender, EventArgs e)
+        {
+            Reloj.Content = DateTime.Now.ToLongTimeString();
+            String contenido = DateTime.Now.ToLongDateString();
+            Fecha.Content = contenido.ToUpper();
         }
     }
 }

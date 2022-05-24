@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MasterTrade.Migrations
 {
     [DbContext(typeof(BaseDatos))]
-    [Migration("20220520122310_inicial")]
+    [Migration("20220430213154_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -86,9 +86,6 @@ namespace MasterTrade.Migrations
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime");
-
-                    b.Property<DateTime>("FechaNacimento")
-                        .HasColumnType("Date");
 
                     b.Property<string>("Imagen")
                         .HasMaxLength(250)
@@ -303,6 +300,10 @@ namespace MasterTrade.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("varchar(200)");
 
+                    b.Property<string>("Descripcion")
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
                     b.Property<string>("Direccion")
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
@@ -315,9 +316,6 @@ namespace MasterTrade.Migrations
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime");
-
-                    b.Property<DateTime>("FechaNacimento")
-                        .HasColumnType("Date");
 
                     b.Property<string>("Imagen")
                         .HasMaxLength(250)
@@ -380,9 +378,6 @@ namespace MasterTrade.Migrations
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime");
-
-                    b.Property<DateTime>("FechaNacimento")
-                        .HasColumnType("Date");
 
                     b.Property<string>("Imagen")
                         .HasMaxLength(250)

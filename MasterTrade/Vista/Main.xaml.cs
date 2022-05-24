@@ -38,7 +38,8 @@ namespace MasterTrade.Vista
         }
         private void btn_cerrar_ventana_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();       
+            //this.Close();
+            App.Current.Shutdown();
             
         }
 

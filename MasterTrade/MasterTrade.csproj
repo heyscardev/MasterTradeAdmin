@@ -8,30 +8,36 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Vista\Recursos\Iconos\Amarillos\add-user.png" />
-    <None Remove="Vista\Recursos\Iconos\Amarillos\ban.png" />
-    <None Remove="Vista\Recursos\Iconos\Amarillos\Clientes.png" />
-    <None Remove="Vista\Recursos\Iconos\Amarillos\Comprar.png" />
-    <None Remove="Vista\Recursos\Iconos\Amarillos\Inicio.png" />
-    <None Remove="Vista\Recursos\Iconos\Amarillos\Productos.png" />
-    <None Remove="Vista\Recursos\Iconos\Amarillos\Proveedores.png" />
-    <None Remove="Vista\Recursos\Iconos\Amarillos\save-file.png" />
-    <None Remove="Vista\Recursos\Iconos\Amarillos\search.png" />
-    <None Remove="Vista\Recursos\Iconos\Amarillos\trash.png" />
-    <None Remove="Vista\Recursos\Iconos\Amarillos\upload.png" />
-    <None Remove="Vista\Recursos\Iconos\Amarillos\Vender.png" />
-    <None Remove="Vista\Recursos\Iconos\Azules\add-user.png" />
-    <None Remove="Vista\Recursos\Iconos\Azules\ban.png" />
-    <None Remove="Vista\Recursos\Iconos\Azules\save-file.png" />
-    <None Remove="Vista\Recursos\Iconos\Azules\search.png" />
-    <None Remove="Vista\Recursos\Iconos\Azules\trash.png" />
-    <None Remove="Vista\Recursos\Iconos\Azules\upload.png" />
-    <None Remove="Vista\Recursos\Iconos\Blancos\add-user.png" />
-    <None Remove="Vista\Recursos\Iconos\Blancos\ban.png" />
-    <None Remove="Vista\Recursos\Iconos\Blancos\save-file.png" />
-    <None Remove="Vista\Recursos\Iconos\Blancos\search.png" />
-    <None Remove="Vista\Recursos\Iconos\Blancos\trash.png" />
-    <None Remove="Vista\Recursos\Iconos\Blancos\upload.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_Actualizar.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_ajustes.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_anadirUsuario.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_Buscar.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_clientes.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_comprar.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_Eliminar.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_inicio.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_productos.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_proveedores.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_vender.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_actualizar.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_ajustes.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_anadirUsuario.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_buscar.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_cancelar.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_clientes.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_comprar.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_eliminar.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_guardar.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_inicio.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_productos.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_proveedores.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_vender.png" />
+    <None Remove="Vista\Recursos\Iconos\blanco_actualizar.png" />
+    <None Remove="Vista\Recursos\Iconos\blanco_anadirUsuario.png" />
+    <None Remove="Vista\Recursos\Iconos\blanco_buscar.png" />
+    <None Remove="Vista\Recursos\Iconos\blanco_cancelar.png" />
+    <None Remove="Vista\Recursos\Iconos\blanco_eliminar.png" />
+    <None Remove="Vista\Recursos\Iconos\blanco_guardar.png" />
     <None Remove="Vista\Recursos\Iconos\IconoCasa.png" />
     <None Remove="Vista\Recursos\Iconos\IconoCerrar.png" />
     <None Remove="Vista\Recursos\Iconos\IconoCerrarSesion.png" />
@@ -45,9 +51,13 @@
     <None Remove="Vista\Recursos\Iconos\IconoVentas.png" />
     <None Remove="Vista\Recursos\Iconos\IconoXBlue.png" />
     <None Remove="Vista\Recursos\Iconos\IconoXRed.png" />
+    <None Remove="Vista\Recursos\Iconos\rojo_cancelar.png" />
     <None Remove="Vista\Recursos\Imagenes\Avatar.png" />
     <None Remove="Vista\Recursos\Imagenes\Fondo.jpg" />
     <None Remove="Vista\Recursos\Imagenes\Logo.png" />
+    <None Remove="Vista\Recursos\Letras\Anton-Regular.ttf" />
+    <None Remove="Vista\Recursos\Letras\OpenSans-Italic-VariableFont_wdth,wght.ttf" />
+    <None Remove="Vista\Recursos\Letras\OpenSans-VariableFont_wdth,wght.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -78,30 +88,96 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Vista\Recursos\Iconos\Amarillos\add-user.png" />
-    <Resource Include="Vista\Recursos\Iconos\Amarillos\ban.png" />
-    <Resource Include="Vista\Recursos\Iconos\Amarillos\Clientes.png" />
-    <Resource Include="Vista\Recursos\Iconos\Amarillos\Comprar.png" />
-    <Resource Include="Vista\Recursos\Iconos\Amarillos\Inicio.png" />
-    <Resource Include="Vista\Recursos\Iconos\Amarillos\Productos.png" />
-    <Resource Include="Vista\Recursos\Iconos\Amarillos\Proveedores.png" />
-    <Resource Include="Vista\Recursos\Iconos\Amarillos\save-file.png" />
-    <Resource Include="Vista\Recursos\Iconos\Amarillos\search.png" />
-    <Resource Include="Vista\Recursos\Iconos\Amarillos\trash.png" />
-    <Resource Include="Vista\Recursos\Iconos\Amarillos\upload.png" />
-    <Resource Include="Vista\Recursos\Iconos\Amarillos\Vender.png" />
-    <Resource Include="Vista\Recursos\Iconos\Azules\add-user.png" />
-    <Resource Include="Vista\Recursos\Iconos\Azules\ban.png" />
-    <Resource Include="Vista\Recursos\Iconos\Azules\save-file.png" />
-    <Resource Include="Vista\Recursos\Iconos\Azules\search.png" />
-    <Resource Include="Vista\Recursos\Iconos\Azules\trash.png" />
-    <Resource Include="Vista\Recursos\Iconos\Azules\upload.png" />
-    <Resource Include="Vista\Recursos\Iconos\Blancos\add-user.png" />
-    <Resource Include="Vista\Recursos\Iconos\Blancos\ban.png" />
-    <Resource Include="Vista\Recursos\Iconos\Blancos\save-file.png" />
-    <Resource Include="Vista\Recursos\Iconos\Blancos\search.png" />
-    <Resource Include="Vista\Recursos\Iconos\Blancos\trash.png" />
-    <Resource Include="Vista\Recursos\Iconos\Blancos\upload.png" />
+    <Resource Include="Vista\Recursos\Iconos\amarillo_Actualizar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\amarillo_ajustes.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\amarillo_anadirUsuario.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\amarillo_Buscar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\amarillo_clientes.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\amarillo_comprar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\amarillo_Eliminar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\amarillo_inicio.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\amarillo_productos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\amarillo_proveedores.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\amarillo_vender.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_actualizar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_ajustes.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_anadirUsuario.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_buscar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_cancelar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_clientes.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_comprar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_eliminar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_guardar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_inicio.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_productos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_proveedores.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_vender.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\blanco_actualizar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\blanco_anadirUsuario.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\blanco_buscar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\blanco_cancelar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\blanco_eliminar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\blanco_guardar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Vista\Recursos\Iconos\IconoCerrarSesion.png" />
     <Resource Include="Vista\Recursos\Iconos\IconoCasa.png" />
     <Resource Include="Vista\Recursos\Iconos\IconoCerrar.png" />
@@ -115,9 +191,21 @@
     <Resource Include="Vista\Recursos\Iconos\IconoVentas.png" />
     <Resource Include="Vista\Recursos\Iconos\IconoXBlue.png" />
     <Resource Include="Vista\Recursos\Iconos\IconoXRed.png" />
+    <Resource Include="Vista\Recursos\Iconos\rojo_cancelar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Vista\Recursos\Imagenes\Avatar.png" />
     <Resource Include="Vista\Recursos\Imagenes\Fondo.jpg" />
     <Resource Include="Vista\Recursos\Imagenes\Logo.png" />
+    <Resource Include="Vista\Recursos\Letras\Anton-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Letras\OpenSans-Italic-VariableFont_wdth,wght.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Letras\OpenSans-VariableFont_wdth,wght.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

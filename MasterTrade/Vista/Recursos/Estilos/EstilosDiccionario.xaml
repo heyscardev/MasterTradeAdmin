@@ -13,6 +13,9 @@
     <ImageBrush x:Key="icono_Cliente_pricipal" ImageSource="/Vista/Recursos/Iconos/IconoCliente.png" />
     <!--  tipos de letras del sistema  -->
     <FontFamily x:Key="roboto_family">/Vista/Recursos/Letras/Roboto-Regular.ttf #Roboto</FontFamily>
+    <FontFamily x:Key="anton">/Vista/Recursos/Letras/Anton-Regular.ttf #Anton</FontFamily>
+    <FontFamily x:Key="opensans-italic">/Vista/Recursos/Letras/OpenSans-Italic-VariableFont_wdth,wght.ttf #OpenSans-Italic</FontFamily>
+    <FontFamily x:Key="opensans">/Vista/Recursos/Letras/OpenSans-VariableFont_wdth,wght.ttf #OpenSansVariable</FontFamily>
     <!--  colores del sistema  -->
     <SolidColorBrush x:Key="azul1" Color="#1C3A4A" />
     <SolidColorBrush x:Key="amarillo1" Color="#FFFFD261" />
@@ -39,8 +42,8 @@
                 TextWrapping="Wrap" />
         </Grid>
     </ControlTemplate>
-
-    <!--  TEXBOXES  -->
+    
+    <!--TEXBOXES-->
     <ControlTemplate x:Key="TextBoxTemplate1" TargetType="{x:Type TextBox}">
         <Border
             x:Name="borde"
@@ -56,7 +59,7 @@
             <!--<Border.Effect>
                 <DropShadowEffect BlurRadius="10" Color="#FF1C3A4A" />
             </Border.Effect>-->
-
+            
             <Grid>
                 <TextBlock
                     x:Name="textico"
@@ -78,7 +81,7 @@
             <MultiTrigger>
 
                 <MultiTrigger.Conditions>
-                    <Condition Property="IsFocused" Value="true" />
+                    <Condition Property="IsFocused" Value="true"/>
                 </MultiTrigger.Conditions>
                 <Setter TargetName="borde" Property="Background" Value="#1C3A4A" />
                 <Setter TargetName="textico" Property="Foreground" Value="White" />
@@ -87,8 +90,8 @@
 
         </ControlTemplate.Triggers>
     </ControlTemplate>
-
-
+    
+    
     <ControlTemplate x:Key="btnAmarillo" TargetType="{x:Type Button}">
         <Grid>
             <Rectangle
@@ -146,9 +149,6 @@
         <Setter Property="IsReadOnly" Value="True" />
         <Setter Property="AlternationCount" Value="2" />
         <Setter Property="BorderBrush" Value="Transparent" />
-
-
-
         <Setter Property="RowStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type DataGridRow}">
@@ -212,29 +212,26 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToolTip">
-                    <Grid
-                        HorizontalAlignment="Stretch"
-                        VerticalAlignment="Stretch"
-                        Background="Transparent">
-                        <Border
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="2"
-                            CornerRadius="5">
-                            <TextBlock
-                                Margin="10"
-                                VerticalAlignment="Center"
-                                FontFamily="{TemplateBinding FontFamily}"
-                                FontSize="{TemplateBinding FontSize}"
-                                Foreground="{TemplateBinding Foreground}"
-                                Text="{TemplateBinding Property=Content}" />
+                    <Grid VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Background="Transparent">
+                        <Border CornerRadius="5"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="2">
+                            <TextBlock Text="{TemplateBinding Property=Content}"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           VerticalAlignment="Center"
+                                           Margin="10"
+                                           FontFamily="{TemplateBinding FontFamily}"
+                                           FontSize="{TemplateBinding FontSize}"/>
                         </Border>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
 
-        <Setter Property="Placement" Value="Right" />
+        <Setter Property="Placement" Value="{Binding Placement}" />
         <Setter Property="Height" Value="AUTO" />
         <Setter Property="Width" Value="AUTO" />
         <Setter Property="Margin" Value="20,0,0,0" />
@@ -248,23 +245,9 @@
         <Setter Property="HasDropShadow" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
     </Style>
-
-    <Style x:Key="text_formulario" TargetType="Label">
-        <Setter Property="Foreground" Value="{StaticResource azul1}" />
-        <Setter Property="FontSize" Value="12" />
-        <Setter Property="FontFamily" Value="{StaticResource roboto_family}" />
-        <Setter Property="VerticalAlignment" Value="Bottom" />
-        <Setter Property="Effect">
-            <Setter.Value>
-                <DropShadowEffect
-                    BlurRadius="20"
-                    Direction="250"
-                    ShadowDepth="3" />
-            </Setter.Value>
-        </Setter>
-
-    </Style>
+    
     <Style x:Key="btn_cerrar" TargetType="{x:Type Button}">
+        
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -285,5 +268,4 @@
         </Setter>
 
     </Style>
-
 </ResourceDictionary>

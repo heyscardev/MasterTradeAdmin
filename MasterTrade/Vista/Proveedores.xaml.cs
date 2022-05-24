@@ -1,6 +1,4 @@
-﻿using MasterTrade.Modelo.Enums;
-using MasterTrade.Vista.Herramientas;
-using Microsoft.Win32;
+﻿using MasterTrade.Vista.Herramientas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,116 +21,106 @@ namespace MasterTrade.Vista
     /// </summary>
     public partial class Proveedores : UserControl
     {
-        private Imagenes ima = new Imagenes();
         public Proveedores()
         {
             InitializeComponent();
-            _config();
-
+            ValidaFormularios vals = new ValidaFormularios();
+            vals.addInput(txtNombre, "REQUERIDO|SOLOLETRAS");
+            // vals.addInput(txtCorreo, "Correo");
+            txtCorreo.KeyUp += vals.eventovalidaCorreoTexBox;
         }
-        private void _config()
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            pickFNacimento.SelectedDate = DateTime.Now.AddYears(-18);
-            pickFNacimento.DisplayDateEnd = DateTime.Now.AddYears(-18);
-            pickFNacimento.DisplayDateStart = new DateTime(1900, 01, 01);
-            _blank();
-
-        }
-        private void _blank()
-        {
-            pickFNacimento.SelectedDate = DateTime.Now.AddYears(-18);
-            tbxIdentificacion.Text = "";
-            tbxCorreo.Text = "";
-            tbxDireccion.Text = "";
-            tbxNombre.Text = "";
-            cbxIdentificacion.SelectedIndex = 0;
-            tbxTelefono.Text = "";
-
-        }
-        private bool camposValidados()
-        {
-            bool resp = true;
-            if (cbxIdentificacion.SelectedItem == null)
-            {
-                cbxIdentificacion.Background = Brushes.Red;
-                resp = false;
-            }
-           
-          
-            if (Vaciotbx(tbxCorreo))
-            {
-                tbxCorreo.Background = Brushes.Green;
-            }
-            else if (!Herramientas.Validaciones.IsCorreo(tbxCorreo.Text))
-            {
-                tbxCorreo.Background = Brushes.Red;
-                resp = false;
-            }
-
-            if (Vaciotbx(tbxIdentificacion))
-            {
-                resp = false;
-            }
-
-            if (Vaciotbx(tbxNombre))
-            {
-                
-                resp = false;
-            }
-            if (Vaciotbx(tbxDireccion))
-            {
-
-                tbxDireccion.Background = Brushes.Green; ;
-            }
-            if (Vaciotbx(tbxTelefono))
-            {
-                tbxTelefono.Background = Brushes.Green;
-            }
-            if (pickFNacimento.SelectedDate.Value.Date.CompareTo(DateTime.Now) > 0 || pickFNacimento.SelectedDate.Value.Date.CompareTo(new DateTime(1900, 01, 01)) < 0)
-            {
-                pickFNacimento.Background = Brushes.Red;
-                resp = false;
-            }
-            else
-            {
-                pickFNacimento.Background = Brushes.Green;
-            }
-            return resp;
-        }
-        private void btnGuardar_Click(object sender, RoutedEventArgs e)
-        {
-            if (!camposValidados()) MessageBox.Show("campo invalidos");
-            else MessageBox.Show("campo validos");
+            Set_Botones("INICIO");
+            Set_DatePicker();
+            Set_TextBoxes(false);
+            gridElementos.Visibility = Visibility.Collapsed;
         }
 
-        private void btnAddImagen_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-
-            if (ima.openDialog())
-                imagen.Source = ima.imagenBitmap;
         }
-        private bool Vaciotbx(TextBox t)
+
+        private void bttnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            t.Background = Brushes.Green;
-            if (t.Text.Length == 0) { t.Background = Brushes.Red; return true; }
-            return false;
+            Ejemplo_Buscar ventanaBuscar = new Ejemplo_Buscar();
+            ventanaBuscar.ShowDialog();
         }
-        private void tbxSoloLetrasn_KeyDown(object sender, KeyEventArgs e) { if (!Validaciones.SoloLetrasTabEnter(e)) e.Handled = true; }
-      
 
-        private void tbxSoloNumeros_KeyDown(object sender, KeyEventArgs e) { if (!Validaciones.SoloNumeroTabEnter(e) ) e.Handled = true; }
-
-        private void tbxValidaVacio(object sender, KeyEventArgs e){ Vaciotbx(sender as TextBox); }
-
-        private void tbxValidaCorreo(object sender, KeyEventArgs e)
+        private void bttnAgregar_Click(object sender, RoutedEventArgs e)
         {
-            TextBox t = sender as TextBox;
-            t.Background = Brushes.Green;
-            if (!Validaciones.IsCorreo(t.Text)&& t.Text.Length>0) t.Background = Brushes.Red;
-           
-            
-            
+            Set_Botones("AGREGAR");
+            Set_TextBoxes(true);
+            gridElementos.Visibility = Visibility.Visible;
+            bttnRegistros.Visibility = Visibility.Collapsed;
         }
+
+        private void bttnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+             * 
+            Clear_Campos();
+            Set_Botones("INICIO");
+            Set_TextBoxes(false);
+            gridElementos.Visibility = Visibility.Collapsed;
+            */
+            MessageBox.Show(txtCorreo.Text);
+        }
+
+        public void Set_Botones(string comando)
+        {
+            switch (comando)
+            {
+                case "INICIO":
+                    bttnBuscar.IsEnabled = true;
+                    bttnAgregar.IsEnabled = true;
+                    bttnCancelar.IsEnabled = false;
+                    bttnGuardar.IsEnabled = false;
+                    bttnActualizar.IsEnabled = false;
+                    bttnEliminar.IsEnabled = false;
+                    break;
+
+                case "AGREGAR":
+                    bttnBuscar.IsEnabled = false;
+                    bttnAgregar.IsEnabled = false;
+                    bttnCancelar.IsEnabled = true;
+                    bttnGuardar.IsEnabled = true;
+                    bttnActualizar.IsEnabled = false;
+                    bttnEliminar.IsEnabled = false;
+                    break;
+            }
+        }
+
+        public void Set_DatePicker()
+        {
+            dtNacimiento.SelectedDate = System.DateTime.Today;
+        }
+
+        public void Clear_Campos()
+        {
+            txtDocumento.Text = "";
+            txtNombre.Text = "";
+            txtDireccion.Text = "";
+            txtTelefono.Text = "";
+            txtCorreo.Text = "";
+            dtNacimiento.SelectedDate = System.DateTime.Today;
+        }
+
+        public void Set_TextBoxes(bool estado)
+        {
+            txtDocumento.IsEnabled = estado;
+            txtNombre.IsEnabled = estado;
+            txtDireccion.IsEnabled = estado;
+            txtTelefono.IsEnabled = estado;
+            txtCorreo.IsEnabled = estado;
+            dtNacimiento.IsEnabled = estado;
+            comboDocumento.IsEnabled = estado;
+            comboTelefono.IsEnabled = estado;
+        }
+        //eventos de validacion
+
+
     }
 }

@@ -8,6 +8,7 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     Background="Transparent"
+    Loaded="UserControl_Loaded"
     mc:Ignorable="d">
     <Border Background="White" CornerRadius="15">
         <Grid>
@@ -24,11 +25,10 @@
             <Label
                 Grid.Row="0"
                 Grid.Column="0"
-                Margin="0,5,0,0"
                 HorizontalAlignment="Center"
                 Content="REGISTRAR PROVEEDOR:"
                 FontSize="40"
-                Foreground="{StaticResource azul1}" />
+                Style="{StaticResource titulo}" />
 
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -46,17 +46,17 @@
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="14"
+                        Style="{StaticResource subtitulo2}"
                         Text="DOCUMENTO DE IDENTIDAD" />
                     <StackPanel
                         Width="AUTO"
                         Height="AUTO"
                         Orientation="Horizontal">
                         <ComboBox
-                            x:Name="cbxIdentificacion"
+                            x:Name="comboDocumento"
                             Width="50"
                             Height="35"
                             Margin="0,0,0,20"
-                            Background="#FFC5C71A"
                             SelectedIndex="0">
                             <ComboBoxItem>V</ComboBoxItem>
                             <ComboBoxItem>E</ComboBoxItem>
@@ -65,99 +65,85 @@
                             <ComboBoxItem>Otro</ComboBoxItem>
                         </ComboBox>
                         <TextBox
-                            x:Name="tbxIdentificacion"
+                            x:Name="txtDocumento"
                             Width="142"
                             Height="35"
                             Margin="5,0,0,20"
-                            KeyDown="tbxSoloNumeros_KeyDown"
-                            KeyUp="tbxValidaVacio"
                             MaxLength="20"
-                            Text="Documento de Identidad" />
+                            Style="{StaticResource TextBoxModerno}" />
                     </StackPanel>
 
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="14"
+                        Style="{StaticResource subtitulo2}"
                         Text="NOMBRE COMPLETO" />
                     <TextBox
-                        x:Name="tbxNombre"
+                        x:Name="txtNombre"
                         Width="AUTO"
                         Height="35"
                         Margin="0,0,0,20"
-                        KeyDown="tbxSoloLetrasn_KeyDown"
-                        KeyUp="tbxValidaVacio"
-                        MaxLength="80"
-                        Text="Ingrese su nombre completo" />
+                        Style="{StaticResource TextBoxModerno}" />
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="14"
+                        Style="{StaticResource subtitulo2}"
                         Text="FECHA DE NACIMIENTO" />
                     <DatePicker
-                        x:Name="pickFNacimento"
+                        x:Name="dtNacimiento"
                         Height="35"
-                        Margin="0,0,0,20"
-                        Cursor="Hand">
-                        <DatePicker.Resources>
-                            <Style TargetType="DatePickerTextBox">
-                                <Setter Property="IsReadOnly" Value="True" />
-                            </Style>
-                        </DatePicker.Resources>
-                    </DatePicker>
+                        Margin="0,0,0,20" />
                 </StackPanel>
 
                 <StackPanel
                     Grid.Column="1"
                     Width="200"
                     Height="270"
-                    Margin="0,0,0,15"
+                    Margin="0"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom">
+                    VerticalAlignment="Center">
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="14"
+                        Style="{StaticResource subtitulo2}"
                         Text="DIRECCIÓN" />
                     <TextBox
-                        x:Name="tbxDireccion"
+                        x:Name="txtDireccion"
                         Width="AUTO"
                         Height="35"
                         Margin="0,0,0,20"
-                        MaxLength="250"
-                        Text="Ingrese Dirección" />
+                        Style="{StaticResource TextBoxModerno}" />
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="14"
+                        Style="{StaticResource subtitulo2}"
                         Text="TELÉFONO" />
                     <StackPanel
                         Width="AUTO"
                         Height="AUTO"
                         Orientation="Horizontal">
                         <ComboBox
-                            x:Name="cbxTelefono"
+                            x:Name="comboTelefono"
                             Width="50"
                             Height="35"
                             Margin="0,0,0,20" />
-
                         <TextBox
-                            x:Name="tbxTelefono"
+                            x:Name="txtTelefono"
                             Width="142"
                             Height="35"
                             Margin="5,0,0,20"
-                            KeyDown="tbxSoloNumeros_KeyDown"
-                            MaxLength="20"
-                            MaxLines="2147483645"
-                            Text="Número telefónico" />
+                            Style="{StaticResource TextBoxModerno}" />
                     </StackPanel>
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="14"
+                        Style="{StaticResource subtitulo2}"
                         Text="CORREO ELECTRÓNICO" />
                     <TextBox
-                        x:Name="tbxCorreo"
+                        x:Name="txtCorreo"
                         Width="AUTO"
                         Height="35"
-                        KeyUp="tbxValidaCorreo"
-                        MaxLength="200"
-                        Text="Ingrese correo electrónico" />
+                        Style="{StaticResource TextBoxModerno}" />
                 </StackPanel>
             </Grid>
 
@@ -172,58 +158,93 @@
                 </Grid.ColumnDefinitions>
 
                 <Button
+                    x:Name="bttnBuscar"
                     Grid.Column="0"
+                    Width="80"
+                    Height="60"
                     Margin="5"
-                    Style="{StaticResource EstiloBotonesAcciones}">
+                    Click="bttnBuscar_Click"
+                    Content="AGREGAR"
+                    Foreground="White"
+                    Style="{StaticResource EstiloBotonesBuscar}">
                     <Button.ToolTip>
-                        <ToolTip Content="BUSCAR PROVEEDOR" Style="{StaticResource tt_style}" />
+                        <ToolTip
+                            Content="BUSCAR PROVEEDOR"
+                            Placement="Top"
+                            Style="{StaticResource tt_style}" />
                     </Button.ToolTip>
                 </Button>
                 <Button
+                    x:Name="bttnAgregar"
                     Grid.Column="1"
                     Margin="5"
+                    Click="bttnAgregar_Click"
+                    Content="CANCELAR"
                     Style="{StaticResource EstiloBotonesAcciones}">
                     <Button.ToolTip>
-                        <ToolTip Content="REGISTAR PROVEEDOR" Style="{StaticResource tt_style}" />
+                        <ToolTip
+                            Content="REGISTAR PROVEEDOR"
+                            Placement="Top"
+                            Style="{StaticResource tt_style}" />
                     </Button.ToolTip>
                 </Button>
                 <Button
+                    x:Name="bttnCancelar"
                     Grid.Column="2"
                     Margin="5"
-                    Style="{StaticResource EstiloBotonesAcciones}">
+                    Click="bttnCancelar_Click"
+                    Content="BUSCAR"
+                    Style="{StaticResource EstiloBotonCancelar}">
                     <Button.ToolTip>
-                        <ToolTip Content="CANCELAR" Style="{StaticResource tt_style}" />
+                        <ToolTip
+                            Content="CANCELAR"
+                            Placement="Top"
+                            Style="{StaticResource tt_style}" />
                     </Button.ToolTip>
                 </Button>
                 <Button
+                    x:Name="bttnGuardar"
                     Grid.Column="3"
                     Margin="5"
-                    Style="{StaticResource EstiloBotonesAcciones}">
+                    Content="MODIFICAR"
+                    Style="{StaticResource EstiloBotonGuardar}">
                     <Button.ToolTip>
-                        <ToolTip Content="GUARDAR PROVEEDOR" Style="{StaticResource tt_style}" />
+                        <ToolTip
+                            Content="GUARDAR PROVEEDOR"
+                            Placement="Top"
+                            Style="{StaticResource tt_style}" />
                     </Button.ToolTip>
                 </Button>
                 <Button
-                    x:Name="btnGuardar"
+                    x:Name="bttnActualizar"
                     Grid.Column="4"
                     Margin="5"
-                    Click="btnGuardar_Click"
-                    Style="{StaticResource EstiloBotonesAcciones}">
+                    Content="ELIMINAR"
+                    Style="{StaticResource EstiloBotonActualizar}">
                     <Button.ToolTip>
-                        <ToolTip Content="ACTUALIZAR PROVEEDOR" Style="{StaticResource tt_style}" />
+                        <ToolTip
+                            Content="ACTUALIZAR REGISTRO"
+                            Placement="Top"
+                            Style="{StaticResource tt_style}" />
                     </Button.ToolTip>
                 </Button>
                 <Button
+                    x:Name="bttnEliminar"
                     Grid.Column="5"
                     Margin="5"
-                    Style="{StaticResource EstiloBotonesAcciones}">
+                    Content="GUARDAR"
+                    Style="{StaticResource EstiloBotonEliminar}">
                     <Button.ToolTip>
-                        <ToolTip Content="ELIMINAR PROVEEDOR" Style="{StaticResource tt_style}" />
+                        <ToolTip
+                            Content="ELIMINAR PROVEEDOR"
+                            Placement="Top"
+                            Style="{StaticResource tt_style}" />
                     </Button.ToolTip>
                 </Button>
             </Grid>
 
             <Grid
+                x:Name="gridElementos"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="20">
@@ -237,7 +258,6 @@
                     Margin="20"
                     Orientation="Vertical">
                     <Image
-                        x:Name="imagen"
                         Width="150"
                         Height="150"
                         Margin="10"
@@ -245,24 +265,20 @@
                         VerticalAlignment="Center"
                         Source="/Vista/Recursos/Iconos/IconoImageAdd.png" />
                     <Button
-                        x:Name="btnAddImagen"
                         Height="50"
+                        Background="Transparent"
                         BorderBrush="Transparent"
-                        Click="btnAddImagen_Click"
                         Content="AGREGAR IMAGEN"
-                        Foreground="Blue">
-                        <Button.Background>
-                            <ImageBrush />
-                        </Button.Background>
-                    </Button>
+                        Foreground="Blue" />
                 </StackPanel>
                 <Button
+                    x:Name="bttnRegistros"
                     Grid.Row="1"
                     HorizontalAlignment="Right"
-                    VerticalAlignment="Center"
+                    VerticalAlignment="Top"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Content="Registros del cliente&gt;"
+                    Content="Registros del proveedor&gt;"
                     Foreground="Blue" />
             </Grid>
 

@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MasterTrade.Clases;
+using MasterTrade.Vista;
 
 namespace MasterTrade.VistaModelo
 {
     class VistaModelo_Registro
     {
+        public ComandoBotones BuscarUsuario{ get; set; }
+        public VistaModelo_Registro()
+        {
+            BuscarUsuario = new ComandoBotones(this);
+        }
+        
+        public void OnExcecute()
+        {
+            
+        }
     }
 }

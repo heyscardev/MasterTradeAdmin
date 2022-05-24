@@ -5,13 +5,230 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MasterTrade.Vista"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Border Background="Transparent">
-        <Button 
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Height="100"
-            Width="200"
-            Content="Aquí van las compras xd"/>
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="UserControl_Loaded_1">
+    <Border Background="White"
+            CornerRadius="15">
+        <Grid Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="450"/>
+                <ColumnDefinition x:Name="columnaCarrito"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="330"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="5"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Content="COMPRAR"
+                   FontSize="40"
+                   Style="{StaticResource titulo}"/>
+            </StackPanel>
+
+            <Grid Grid.Row="1"
+                  Grid.Column="0"
+                  Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="AUTO"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Vertical"
+                            Margin="5">
+
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical"
+                            Margin="5"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Width="AUTO"
+                            Height="AUTO">
+                    <TextBlock Text="SELECCIONAR PRODUCTO"
+                               Margin="0, 0, 0, 2"
+                               Style="{StaticResource subtitulo2}"/>
+                    <ComboBox VerticalAlignment="Center"
+                             HorizontalAlignment="Center"
+                             Width="200"
+                             Height="35"
+                             x:Name="comboProducto"
+                             Margin="0, 0, 0, 22"/>
+
+                    <TextBlock Text="NOMBRE DEL PRODUCTO"
+                               Margin="0, 0, 0, 2"
+                               Style="{StaticResource subtitulo2}"/>
+                    <TextBox Style="{StaticResource TextBoxModerno}"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Left"
+                             Margin="0, 0, 0, 15"
+                             Width="200"
+                             x:Name="txtNombre"/>
+
+                    <TextBlock Text="CÓDGO DE BARRAS"
+                               Margin="0, 0, 0, 2"
+                               Style="{StaticResource subtitulo2}"/>
+                    <TextBox Style="{StaticResource TextBoxModerno}"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Left"
+                             Margin="0, 0, 0, 15"
+                             Width="200"
+                             x:Name="txtCodigoBarras"/>
+
+                    <TextBlock Text="CANTIDAD"
+                               Margin="0, 0, 0, 2"
+                               Style="{StaticResource subtitulo2}"/>
+                    <StackPanel Orientation="Horizontal"
+                                Height="AUTO">
+                        <TextBox Margin="0,0,0,20"
+                                 Width="50"
+                                 Height="35"
+                                 Text="1"
+                                 x:Name="txtCantidad"
+                                 Style="{StaticResource TextBoxModerno}"/>
+                        <Label Margin="5,0,0,20"
+                               Content="UNIDADES"
+                               Foreground="#1C3AA4"
+                               VerticalAlignment="Center"
+                               FontSize="14"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Column="0"
+                            Grid.Row="0"
+                            Orientation="Vertical"
+                            Margin="5">
+                    <TextBlock Text="BUSCAR PROVEEDOR"
+                               Margin="0, 0, 0, 2"
+                               Style="{StaticResource subtitulo2}"/>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0, 0, 5, 15">
+                        <TextBox Style="{StaticResource TextBoxModerno}"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Center"
+                             Width="150"
+                             Margin="0, 0, 5, 0"/>
+                        <Button Style="{StaticResource EstiloBotonesBuscar}"
+                                Height="42"
+                                Width="42"
+                                x:Name="bttnBuscar"
+                                Click="bttnBuscar_Click"
+                                HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock Text="RAZÓN SOCIAL"
+                               Margin="0, 0, 0, 2"
+                               Style="{StaticResource subtitulo2}"/>
+                    <TextBox Style="{StaticResource TextBoxModerno}"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Left"
+                             Margin="0, 0, 0, 15"
+                             Width="200"/>
+
+                    <TextBlock Text="DOCUMENTO DE IDENTIDAD"
+                               Margin="0, 0, 0, 2"
+                               Style="{StaticResource subtitulo2}"/>
+                    <TextBox Style="{StaticResource TextBoxModerno}"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Left"
+                             Margin="0, 0, 0, 15"
+                             Width="200"/>
+
+                    <TextBlock Text="NÚMERO TELEFÓNICO"
+                               Margin="0, 0, 0, 2"
+                               Style="{StaticResource subtitulo2}"/>
+                    <TextBox Style="{StaticResource TextBoxModerno}"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Left"
+                             Margin="0, 0, 0, 15"
+                             Width="200"/>
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Grid.Row="2"
+                        Grid.Column="0"
+                        Margin="5"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right">
+                <Button Height="40"
+                        Width="80"
+                        Content="ATRÁS"
+                        Margin="0, 0, 5, 0"
+                        x:Name="bttnAtras"
+                        Click="bttnAtras_Click"
+                        Style="{StaticResource BlankButton}"/>
+                <Button Height="40"
+                        Width="80"
+                        Content="AÑADIR"
+                        Margin="5, 0, 0, 0"
+                        x:Name="bttnAgnadir"
+                        Click="bttnAgnadir_Click"
+                        Style="{StaticResource BlankButton}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="5"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Orientation="Horizontal"
+                        x:Name="stackCarrito">
+                <Image Height="32"
+                       Width="32"
+                       Source="{StaticResource icono_compra_azul}"/>
+                <Label Content="CARRITO"
+                       Foreground="#1C3A4A"
+                       VerticalAlignment="Center"
+                       FontWeight="Medium"
+                       Margin="2, 0, 0, 0"
+                       Style="{StaticResource subtitulo}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="5">
+                <DataGrid Margin="5"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"
+                          Height="270"
+                          x:Name="gridDetalles">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="CÓDIGO DEL PRODUCTO"/>
+                        <DataGridTextColumn Header="NOMBRE"
+                                        Width="AUTO"/>
+                        <DataGridTextColumn Header="CANTIDAD"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label Content="TOTAL: 0.00$"
+                       HorizontalAlignment="Right"
+                       FontSize="15"
+                       FontWeight="Medium"
+                       x:Name="labelTotal"
+                       Style="{StaticResource titulo}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="5"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right">
+                <Button Height="40"
+                        Width="AUTO"
+                        Content="CONFIRMAR COMPRA"
+                        Margin="5, 0, 0, 0"
+                        x:Name="bttnConfirmar"
+                        Style="{StaticResource BlankButton}"/>
+            </StackPanel>
+        </Grid>
     </Border>
 </UserControl>

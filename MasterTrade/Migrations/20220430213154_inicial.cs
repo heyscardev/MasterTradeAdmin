@@ -27,7 +27,6 @@ namespace MasterTrade.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Correo = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    FechaNacimento = table.Column<DateTime>(type: "Date", nullable: false),
                     Telefono = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Direccion = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: true)
@@ -99,6 +98,8 @@ namespace MasterTrade.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Descripcion = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     FechaCreacion = table.Column<DateTime>(type: "datetime", nullable: false),
                     FechaActualizacion = table.Column<DateTime>(type: "datetime", nullable: false),
                     EstadoBorrado = table.Column<bool>(type: "tinyint(1)", nullable: true),
@@ -109,7 +110,6 @@ namespace MasterTrade.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Correo = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    FechaNacimento = table.Column<DateTime>(type: "Date", nullable: false),
                     Telefono = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Direccion = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: true)
@@ -149,7 +149,6 @@ namespace MasterTrade.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Correo = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    FechaNacimento = table.Column<DateTime>(type: "Date", nullable: false),
                     Telefono = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Direccion = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: true)
