@@ -1,6 +1,7 @@
 ﻿
 using MasterTrade.Modelo.Entidades;
 using MasterTrade.Vista.Herramientas.validaciones;
+using MasterTrade.VistaModelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,7 @@ namespace MasterTrade.Vista
             vf.addInput(txtNombre, "").requerido().soloLetras().max("80");
             vf.addInput(txtDireccion, "").max("250");
             vf.addInput(txtTelefono, "").phone().max("20");
+           
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -135,9 +137,7 @@ namespace MasterTrade.Vista
 
         private void bttnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            Proveedor p = new Proveedor();
-            p.RazonSocial = txtNombre.Text;
-            
+
         }
         //eventos de validacion
 
