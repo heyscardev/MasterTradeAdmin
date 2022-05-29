@@ -35,11 +35,11 @@ namespace MasterTrade.Vista
         private void _config()
         {
             vf = new ValidaFormulario(Brushes.Red, Brushes.Green);
-            vf.addInput(txtCorreo, "").email().max("200");
-            vf.addInput(txtDocumento, "").requerido().soloNumeros().max("20");
-            vf.addInput(txtNombre, "").requerido().soloLetras().max("80");
-            vf.addInput(txtDireccion, "").max("250");
-            vf.addInput(txtTelefono, "").phone().max("20");
+            vf.addInput(txtCorreo, "").email().max(200);
+            vf.addInput(txtDocumento, "").requerido().soloNumeros().max(20);
+            vf.addInput(txtNombre, "").requerido().soloLetras().max(80);
+            vf.addInput(txtDireccion, "").max(250);
+            vf.addInput(txtTelefono, "").phone().max(20);
            
         }
 
@@ -137,7 +137,7 @@ namespace MasterTrade.Vista
 
         private void bttnGuardar_Click(object sender, RoutedEventArgs e)
         {
-
+            if (vf.formularioisValido()) MessageBox.Show("formulario valido");
         }
         //eventos de validacion
 

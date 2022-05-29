@@ -36,7 +36,7 @@ namespace MasterTrade.Vista.Herramientas.validaciones
         public InputTexboxValidate addInput(TextBox input, string keys)
         {
             if (input == null) return null;
-            var  nuevo = new InputTexboxValidate(input, keys,this.colorValid,this.colorNegate);
+            var  nuevo = new InputTexboxValidate(input, keys,this.colorNegate,colorValid);
             inputs.Add(nuevo);
           
             return nuevo;

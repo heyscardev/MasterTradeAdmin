@@ -31,49 +31,39 @@ namespace MasterTrade.Vista.Herramientas.validaciones
             this.input = t;
             this.colorNegate = colorNegate;
             this.colorValid = colorValid;
-                 reque = false;
-                 telefono = false;
-                 correo = false;
-                 sLetras = false;
-                 sNumeros = false;
-    }
+            traducirReglas(validaciones);
+         }
         public InputTexboxValidate(TextBox t, string validaciones)
         {
             this.validaciones = validaciones;
             this.input = t;
-            reque = false;
-            telefono = false;
-            correo = false;
-            sLetras = false;
-            sNumeros = false;
+            traducirReglas(validaciones);
         }
-        private bool establecerReglas()
+        private void traducirReglas(string reglas)
         {
-            var descomposicion = this.validaciones.Replace(" ",String.Empty).Split("|");
+            var descomposicion = this.validaciones.Replace(" ", String.Empty).Split("|");
             foreach (string attr in descomposicion)
             {
-                
+
                 var regla = attr.ToLower().Split(':');
                 if (regla.Length == 1)
                 {
                     switch (regla[0])
                     {
                         case "requerido":
-                         
-                    if (!reque)
-                            requerido();
+                            reque = true;
                             break;
                         case "correo":
-                            if (!correo && !sLetras && !sNumeros && !telefono) email();
+                            correo = true;
                             break;
                         case "telefono":
-                            if (!correo && !sLetras && !sNumeros && !telefono) phone();
+                            telefono = true;
                             break;
                         case "solonumeros":
-                            if (!correo && !sLetras && !sNumeros && !telefono) soloNumeros();
+                            sNumeros = true;
                             break;
                         case "sololetras":
-                            if (!correo && !sLetras && !sNumeros && !telefono) email();
+                            sLetras = true;
                             break;
                     }
                 }
@@ -82,65 +72,87 @@ namespace MasterTrade.Vista.Herramientas.validaciones
                     switch (regla[0].ToLower())
                     {
                         case "requerido":
-                            if (!regla[1].Equals("false") && !reque ) requerido(); ;
-                            break;
+                            if (!regla[1].Equals("true")) reque = true;
+                                break;
                         case "correo":
-                            if (!regla[1].Equals("false") && !correo && !sLetras && !sNumeros && !telefono) email();
+                            if (!regla[1].Equals("false")) correo = true;
                             break;
                         case "telefono":
-                            if (!regla[1].Equals("false") && !correo && !sLetras && !sNumeros && !telefono) phone();
+                            if (!regla[1].Equals("false")) telefono = true;
                             break;
                         case "solonumeros":
-                            if (!regla[1].Equals("false") && !correo && !sLetras && !sNumeros && !telefono) soloNumeros();
+                            if (!regla[1].Equals("false")) sNumeros = true;
                             break;
                         case "sololetras":
-                            if (!regla[1].Equals("false") && !correo && !sLetras && !sNumeros && !telefono) email();
+                            if (!regla[1].Equals("false")) sLetras = true;
                             break;
                         case "max":
-                            max(regla[1]);
+                            if (isNumeric(regla[1]) && int.Parse(regla[1])>= 0) maxLetter = int.Parse(regla[1]);
                             break;
                         case "min":
-                            min(regla[1]);
+                            if (isNumeric(regla[1]) && int.Parse(regla[1])>= 0) minLetter = int.Parse(regla[1]);
                             break;
                     }
                 }
             }
-            return true;
+        }
+        private void establecerReglas()
+        {
+            if (correo) this.email();
+            else if (telefono)this.phone();
+            else if (sLetras) this.soloLetras();
+            else if (sNumeros) this.soloNumeros();
+            if (!correo && !telefono && reque) requerido();
+            if (maxLetter != -1) this.max(maxLetter);
+            if (minLetter != -1) this.min(minLetter);
         }
 
         public bool isValido()
         {
+            if (reque && !this.validRequerido())
+            {
+                MessageBox.Show("el campo: '" + input.Name + " es obligatorio ");
+                return false;
+            }
 
-          
-                            if (reque && !this.validRequerido()) return false;
+            if (correo && !this.validEmail())
+            {
+                MessageBox.Show("el correo: '" + input.Text + "' no es valido intente en formato 'example@example.com' o  '(xxxx) xxx xxxx ' ");
+                return false;
+            }
+            if (telefono && !validPhone() ) return false;
+            {
+                MessageBox.Show("el telefono: '" + input.Text + "' no es valido intente en formato '+xx (xxxx) xxx xxxx' o  '(xxxx) xxx xxxx ' ");
+                return false;
+            }
 
-                            if (correo && !this.validEmail()) return false;
-                      
-                            if (telefono && !validPhone() ) return false;
-                       
-                            if (sNumeros && !validSoloNumeros()) return false;
-                   
-                           
-                            if (sLetras && !validSoloLetras()) return false;
-                     
-                            if (maxLetter != -1 && !validMax()) return false;
-                        
-                            if (minLetter != -1 && !validMin()) return false;
-                   
+            if (maxLetter != -1 && !validMax())
+            {
+                MessageBox.Show("el elemento: '" + input.Text + "' no cumple con el maximo de caracteres: " + maxLetter);
+                return false;
+            }
+
+            if (minLetter != -1 && !validMin())
+            {
+                MessageBox.Show("el elemento: '" + input.Text + "' no cumple con el minimo de caracteres: " + minLetter);
+                return false;
+            }
+           
             return true;
         }
-        public InputTexboxValidate max(string maximo)
+        public InputTexboxValidate max(int maximo)
         {
-            if (this.isNumeric(maximo) && int.Parse(maximo)>0)
+            if (maximo >= 0)
             {
-                input.MaxLength = int.Parse(maximo);
-                maxLetter = int.Parse(maximo);
+                input.MaxLength = maximo;
+                maxLetter = maximo;
             }
+            else this.maxLetter = -1;
             return this;
         }
-        public InputTexboxValidate min(string minimo)
+        public InputTexboxValidate min(int minimo)
         {
-            if (this.isNumeric(minimo) &&  int.Parse(minimo)>= 0) this.minLetter = int.Parse(minimo);
+            if ( minimo>= 0) this.minLetter = minimo;
             return this;
         }
         public InputTexboxValidate requerido()
@@ -153,6 +165,7 @@ namespace MasterTrade.Vista.Herramientas.validaciones
         public InputTexboxValidate email()
         {
             this.input.KeyUp += this.eventoValidaCorreoTexBox;
+            this.input.KeyDown += this.eventoEmailKeyDown;
             correo = true;
             return this;
         }
@@ -170,7 +183,8 @@ namespace MasterTrade.Vista.Herramientas.validaciones
         }
         public InputTexboxValidate phone()
         {
-            this.input.KeyUp += this.eventoValidaTelefono;
+            this.input.KeyUp += this.eventoValidaTelefonoKeyUp;
+            this.input.KeyDown += this.eventoValidaTelefonoKeyDown;
             telefono = true;
             return this;
         }
@@ -210,7 +224,14 @@ namespace MasterTrade.Vista.Herramientas.validaciones
             return false;
         }
 
-        public void eventoSoloLetrasKeyDownTexBox(object sender, KeyEventArgs e)
+        private void eventoEmailKeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (!this.isKeyCorreo(e.Key)) e.Handled = true;
+          
+        }
+
+        private void eventoSoloLetrasKeyDownTexBox(object sender, KeyEventArgs e)
         {
             if (!this.isKeyAlphabet(e.Key) && !this.isKeyFunctional(e.Key))
             {
@@ -218,7 +239,7 @@ namespace MasterTrade.Vista.Herramientas.validaciones
                 Console.Beep();
             }
         }
-        public void eventoSoloNumerosKeyDownTexBox(object sender, KeyEventArgs e)
+        private void eventoSoloNumerosKeyDownTexBox(object sender, KeyEventArgs e)
         {
             if (!this.isKeyNumeric(e.Key) && !this.isKeyFunctional(e.Key) )
             {
@@ -227,37 +248,35 @@ namespace MasterTrade.Vista.Herramientas.validaciones
             }
            
         }
-        public void eventoNoVacioKeyUpTexBox(object sender, KeyEventArgs e)
+        private void eventoNoVacioKeyUpTexBox(object sender, KeyEventArgs e)
         {
 
 
-            if (!this.isVacio(this.input.Text)) this.input.Background = this.colorNegate;
+            if (this.isVacio(this.input.Text)) this.input.Background = this.colorNegate;
             else this.input.Background = this.colorValid;
         }
-        public void eventoValidaCorreoTexBox(object sender, KeyEventArgs e)
+        private void eventoValidaCorreoTexBox(object sender, KeyEventArgs e)
         {
-          
-            if (this.isCorreo(this.input.Text))
-            {
-                if ((reque && validRequerido()) || (!reque && !validRequerido()))
-                    this.input.Background = this.colorValid;
-                else this.input.Background = this.colorNegate;
-            }
-            else this.input.Background = this.colorNegate;
+           this.input.Background = this.colorNegate;
+
+         
+                if (reque && this.isCorreo(this.input.Text)) this.input.Background = this.colorValid;
+                else if (isVacio(this.input.Text) || this.isCorreo(this.input.Text)) this.input.Background = this.colorValid;
+            this.input.Text = this.input.Text.Replace(" ", String.Empty).Replace("", String.Empty);
+            this.input.Select(input.Text.Length, 0);
+    
+
         }
-        public void eventoValidaTelefono(object sender, KeyEventArgs e)
+        private void eventoValidaTelefonoKeyDown(object sender, KeyEventArgs e)
         {
             if (!isKeyNumericPhone(e.Key)) e.Handled = true;
-            if (
-                this.isPhoneInternacional(this.input.Text)
-                || this.isPhoneNacional(this.input.Text)
-                ) {
-                this.input.Background = this.colorValid;
-                if (!reque && validRequerido())
-                    this.input.Background = this.colorNegate;
-            }
-            
+        }
+
+        private void eventoValidaTelefonoKeyUp(object sender, KeyEventArgs e)
+        {
             this.input.Background = this.colorNegate;
+            if (reque && (this.isPhoneInternacional(this.input.Text)|| isPhoneNacional(this.input.Text))) this.input.Background = this.colorValid;
+            else if (isVacio(this.input.Text) || (this.isPhoneInternacional(this.input.Text) || isPhoneNacional(this.input.Text)) ) this.input.Background = this.colorValid;
         }
     }
 }

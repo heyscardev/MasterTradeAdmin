@@ -63,8 +63,9 @@ namespace MasterTrade.Vista.Herramientas.validaciones
 
                 }
             }
-            if (isPuntoNext)
-                return true;
+
+            if (isPuntoNext)return true;
+          
             return false;
         }
         public  bool isKeyNumeric(Key key)
@@ -79,13 +80,19 @@ namespace MasterTrade.Vista.Herramientas.validaciones
             return false;
 
         }
+        public bool isKeyCorreo(Key key)
+        {
+            if (key == Key.Space) return false;
+            return true;
+        }
         public bool isKeyNumericPhone(Key key)
         {
-
+            
             if (
                ((key >= Key.D0 && key <= Key.D9)
                || (key >= Key.NumPad0 && key <= Key.NumPad9))
                || key == Key.OemPlus
+               || key == Key.Add
                || key == Key.OemCloseBrackets 
                || key == Key.OemOpenBrackets
                )
