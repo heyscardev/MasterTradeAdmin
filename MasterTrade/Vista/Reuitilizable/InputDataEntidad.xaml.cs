@@ -92,28 +92,7 @@ namespace MasterTrade.Vista.Reutilizable
             }
         }
 
-        private void Text_Box_SoloLetras(object sender, KeyEventArgs e)
-        {
-            Validaciones.SoloLetrasTabEnter(e);
-        }
-        private void Text_Box_Solo_Numeros(object sender, KeyEventArgs e)
-        {
-         Validaciones.SoloNumeroTabEnter(e);
-        }
-        private void Text_Box_Solo_Numeros_telefono(object sender, KeyEventArgs e)
-        {
-            if (e.Key != Key.OemPlus) Validaciones.SoloNumeroTabEnter(e);
-        }
-
-        private void Text_Box_Is_Correo(object sender, TextChangedEventArgs e)
-        {
-            TextBox obj = sender as TextBox;
-            if (!Validaciones.IsCorreo(obj.Text))
-                obj.Background = Brushes.Red;
-            else
-                obj.Background = Brushes.White;
-        }
-
+      
         private void imagen_MouseDown(object sender, MouseButtonEventArgs e)
         {
             OpenFileDialog file = new OpenFileDialog();

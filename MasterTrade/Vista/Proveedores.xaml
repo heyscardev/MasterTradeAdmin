@@ -70,7 +70,8 @@
                             Height="35"
                             Margin="5,0,0,20"
                             MaxLength="20"
-                            Style="{StaticResource TextBoxModerno}" />
+                            Style="{StaticResource TextBoxModerno}"
+                            Tag="Introduzca cedula" />
                     </StackPanel>
 
                     <TextBlock
@@ -83,7 +84,8 @@
                         Width="AUTO"
                         Height="35"
                         Margin="0,0,0,20"
-                        Style="{StaticResource TextBoxModerno}" />
+                        Style="{StaticResource TextBoxModerno}"
+                        Tag="Introduzca nombre o razon social" />
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="14"
@@ -112,7 +114,8 @@
                         Width="AUTO"
                         Height="35"
                         Margin="0,0,0,20"
-                        Style="{StaticResource TextBoxModerno}" />
+                        Style="{StaticResource TextBoxModerno}"
+                        Tag="Introduzca Direccion" />
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="14"
@@ -132,7 +135,8 @@
                             Width="142"
                             Height="35"
                             Margin="5,0,0,20"
-                            Style="{StaticResource TextBoxModerno}" />
+                            Style="{StaticResource TextBoxModerno}"
+                            Tag="Introduzca telefono" />
                     </StackPanel>
                     <TextBlock
                         Margin="0,0,0,10"
@@ -143,7 +147,8 @@
                         x:Name="txtCorreo"
                         Width="AUTO"
                         Height="35"
-                        Style="{StaticResource TextBoxModerno}" />
+                        Style="{StaticResource TextBoxModerno}"
+                        Tag="introduzca correo" />
                 </StackPanel>
             </Grid>
 
@@ -207,7 +212,7 @@
                     Grid.Column="3"
                     Margin="5"
                     Content="MODIFICAR"
-                    Style="{StaticResource EstiloBotonGuardar}">
+                    Style="{StaticResource EstiloBotonGuardar}" Click="bttnGuardar_Click">
                     <Button.ToolTip>
                         <ToolTip
                             Content="GUARDAR PROVEEDOR"

@@ -45,7 +45,6 @@
                 FontSize="16"
                 Foreground="#1C3A4A"
                 MaxLength="80"
-                PreviewKeyDown="Text_Box_SoloLetras"
                 Template="{DynamicResource TextBoxTemplate1}"
                 TextChanged="TextBox_TextChanged"
                 ToolTip="nombre de cliente o razon social en caso de empresa" />
@@ -87,9 +86,7 @@
                 FontSize="16"
                 Foreground="#1C3A4A"
                 MaxLength="20"
-                PreviewKeyDown="Text_Box_Solo_Numeros"
                 Template="{DynamicResource TextBoxTemplate1}"
-                TextChanged="TextBox_TextChanged"
                 ToolTip="rif o cedula solo numero" />
         </Grid>
         <Grid
@@ -115,7 +112,6 @@
                 Foreground="#1C3A4A"
                 MaxLength="200"
                 Template="{DynamicResource TextBoxTemplate1}"
-                TextChanged="Text_Box_Is_Correo"
                 ToolTip="correo debe lleva @xxx.xx" />
         </Grid>
         <Grid
@@ -205,7 +201,6 @@
                 FontSize="16"
                 Foreground="#1C3A4A"
                 MaxLength="20"
-                PreviewKeyDown="Text_Box_Solo_Numeros_telefono"
                 Template="{DynamicResource TextBoxTemplate1}"
                 ToolTip="telefono en formato +xx xxxxxxxxx" />
         </Grid>

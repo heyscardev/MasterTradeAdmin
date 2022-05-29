@@ -1,4 +1,6 @@
-﻿using MasterTrade.Vista.Herramientas;
+﻿
+using MasterTrade.Modelo.Entidades;
+using MasterTrade.Vista.Herramientas.validaciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +23,22 @@ namespace MasterTrade.Vista
     /// </summary>
     public partial class Proveedores : UserControl
     {
+        private ValidaFormulario vf;
         public Proveedores()
         {
             InitializeComponent();
-            ValidaFormularios vals = new ValidaFormularios();
-            vals.addInput(txtNombre, "REQUERIDO|SOLOLETRAS");
-            // vals.addInput(txtCorreo, "Correo");
-            txtCorreo.KeyUp += vals.eventovalidaCorreoTexBox;
+            _config();
+
+
+        }
+        private void _config()
+        {
+            vf = new ValidaFormulario(Brushes.Red, Brushes.Green);
+            vf.addInput(txtCorreo, "").email().max("200");
+            vf.addInput(txtDocumento, "").requerido().soloNumeros().max("20");
+            vf.addInput(txtNombre, "").requerido().soloLetras().max("80");
+            vf.addInput(txtDireccion, "").max("250");
+            vf.addInput(txtTelefono, "").phone().max("20");
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -66,7 +77,9 @@ namespace MasterTrade.Vista
             Set_TextBoxes(false);
             gridElementos.Visibility = Visibility.Collapsed;
             */
-            MessageBox.Show(txtCorreo.Text);
+            if (vf.formularioisValido()) MessageBox.Show("todo bien");
+            else MessageBox.Show("algo mal");
+         
         }
 
         public void Set_Botones(string comando)
@@ -118,6 +131,13 @@ namespace MasterTrade.Vista
             dtNacimiento.IsEnabled = estado;
             comboDocumento.IsEnabled = estado;
             comboTelefono.IsEnabled = estado;
+        }
+
+        private void bttnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            Proveedor p = new Proveedor();
+            p.RazonSocial = txtNombre.Text;
+            
         }
         //eventos de validacion
 
