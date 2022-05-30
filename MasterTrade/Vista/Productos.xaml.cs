@@ -86,6 +86,7 @@ namespace MasterTrade.Vista
             txtProveedor.IsEnabled = estado;
             txtStockMin.IsEnabled = estado;
             txtStockMax.IsEnabled = estado;
+            txtCosto.IsEnabled = estado;
         }
 
         public void Clear_Campos()
@@ -96,6 +97,7 @@ namespace MasterTrade.Vista
             txtProveedor.Text = "";
             txtStockMin.Text = "";
             txtStockMax.Text = "";
+            txtCosto.Text = "";
         }
     }
 }

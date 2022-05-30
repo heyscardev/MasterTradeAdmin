@@ -37,7 +37,7 @@ namespace MasterTrade.Vista.Herramientas.validaciones
             bool isArroba = false; // primero comprueba arroba
             bool isPunto = false;//comprueba un punto 
             bool isPuntoNext = false;//comprueba
-            //itera todo el strinen busca de este patron nombre@domino.terminacion esto es invalido nombre@@domino..terminacio
+            //itera todo el string busca de este patron nombre@domino.terminacion esto es invalido nombre@@domino..terminacio
             foreach (char a in text.ToCharArray())
             {
                 if (isArroba && isPunto) isPuntoNext = true;

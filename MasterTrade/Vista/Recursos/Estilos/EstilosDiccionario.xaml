@@ -18,8 +18,11 @@
     <FontFamily x:Key="opensans">/Vista/Recursos/Letras/OpenSans-VariableFont_wdth,wght.ttf #OpenSansVariable</FontFamily>
     <!--  colores del sistema  -->
     <SolidColorBrush x:Key="azul1" Color="#1C3A4A" />
+    <SolidColorBrush x:Key="azul2" Color="#385869" />
+    <SolidColorBrush x:Key="azul3" Color="#011952" />
     <SolidColorBrush x:Key="amarillo1" Color="#FFFFD261" />
     <SolidColorBrush x:Key="amarillo2" Color="#FFC08900" />
+    <SolidColorBrush x:Key="purpura" Color="#47254D" />
     <!--  componentes personalizados del sistema  -->
     <ControlTemplate x:Key="btnAzul" TargetType="{x:Type Button}">
         <Grid>
@@ -136,69 +139,7 @@
         </Grid>
     </ControlTemplate>
     <!--  estilos fronted  -->
-    <Style x:Key="tablas" TargetType="DataGrid">
-        <Setter Property="RowHeight" Value="50" />
-        <Setter Property="RowBackground" Value="{StaticResource amarillo1}" />
-        <Setter Property="GridLinesVisibility" Value="None" />
-        <Setter Property="Foreground" Value="{StaticResource azul1}" />
-        <Setter Property="AlternatingRowBackground" Value="{StaticResource amarillo2}" />
-        <Setter Property="FontFamily" Value="{StaticResource roboto_family}" />
-        <Setter Property="FontSize" Value="14" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="AutoGenerateColumns" Value="False" />
-        <Setter Property="IsReadOnly" Value="True" />
-        <Setter Property="AlternationCount" Value="2" />
-        <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="RowStyle">
-            <Setter.Value>
-                <Style TargetType="{x:Type DataGridRow}">
-                    <Setter Property="Margin" Value="2" />
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" Value="#99333333" />
-                        </Trigger>
-                        <Trigger Property="IsSelected" Value="true">
-                            <Setter Property="Background" Value="{StaticResource azul1}" />
-                            <Setter Property="BorderThickness" Value="2" />
-                            <Setter Property="BorderBrush" Value="White" />
-                            <Setter Property="Foreground" Value="{StaticResource azul1}" />
-
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="ColumnHeaderStyle">
-            <Setter.Value>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="Background" Value="{StaticResource amarillo2}" />
-                    <Setter Property="Height" Value="50" />
-                    <Setter Property="FontWeight" Value="Bold" />
-                    <Setter Property="FontSize" Value="16" />
-                    <Setter Property="Margin" Value="0,0,10,0" />
-                </Style>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="CellStyle">
-            <Setter.Value>
-                <Style TargetType="{x:Type DataGridCell}">
-                    <Setter Property="VerticalAlignment" Value="Center" />
-                    <Setter Property="HorizontalAlignment" Value="Stretch" />
-
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="true">
-                            <Setter Property="BorderThickness" Value="0" />
-                            <Setter Property="Background" Value="{StaticResource azul1}" />
-                            <Setter Property="Foreground" Value="White" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Setter.Value>
-        </Setter>
-
-
-
-    </Style>
+    
     <Style x:Key="font_style" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="View/Recursos/Roboto-Regular.ttf #Roboto" />
         <Setter Property="VerticalAlignment" Value="Center" />

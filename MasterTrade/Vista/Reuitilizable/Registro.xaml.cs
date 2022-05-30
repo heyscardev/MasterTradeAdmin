@@ -16,7 +16,6 @@ namespace MasterTrade.Vista.Reuitilizable
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             Set_Botones("INICIO");
-            Set_DatePicker();
             Set_TextBoxes(false);
             gridElementos.Visibility = Visibility.Collapsed;
         }
@@ -68,10 +67,6 @@ namespace MasterTrade.Vista.Reuitilizable
             gridElementos.Visibility = Visibility.Collapsed;
         }
 
-        public void Set_DatePicker() {
-            dtNacimiento.SelectedDate = System.DateTime.Today;
-        }
-
         public void Clear_Campos()
         {
             txtDocumento.Text = "";
@@ -79,7 +74,6 @@ namespace MasterTrade.Vista.Reuitilizable
             txtDireccion.Text = "";
             txtTelefono.Text = "";
             txtCorreo.Text = "";
-            dtNacimiento.SelectedDate = System.DateTime.Today;
         }
 
         public void Set_TextBoxes(bool estado)
@@ -89,9 +83,7 @@ namespace MasterTrade.Vista.Reuitilizable
             txtDireccion.IsEnabled = estado;
             txtTelefono.IsEnabled = estado;
             txtCorreo.IsEnabled = estado;
-            dtNacimiento.IsEnabled = estado;
             comboDocumento.IsEnabled = estado;
-            comboTelefono.IsEnabled = estado;
         }
     }
 }

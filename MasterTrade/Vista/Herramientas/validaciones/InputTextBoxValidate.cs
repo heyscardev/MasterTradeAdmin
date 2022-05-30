@@ -117,10 +117,10 @@ namespace MasterTrade.Vista.Herramientas.validaciones
 
             if (correo && !this.validEmail())
             {
-                MessageBox.Show("el correo: '" + input.Text + "' no es valido intente en formato 'example@example.com' o  '(xxxx) xxx xxxx ' ");
+                MessageBox.Show("el correo: '" + input.Text + "' no es valido intente en formato 'example@example.com'");
                 return false;
             }
-            if (telefono && !validPhone() ) return false;
+            if (telefono && !validPhone()) return false;
             {
                 MessageBox.Show("el telefono: '" + input.Text + "' no es valido intente en formato '+xx (xxxx) xxx xxxx' o  '(xxxx) xxx xxxx ' ");
                 return false;
@@ -205,7 +205,7 @@ namespace MasterTrade.Vista.Herramientas.validaciones
         }
         public bool validEmail()
         {
-            if (this.isCorreo(this.input.Text)||  this.isVacio(this.input.Text)) return true;
+            if (this.isCorreo(this.input.Text)|| this.isVacio(this.input.Text)) return true;
             return false;
         }
         public bool validSoloLetras()
@@ -252,17 +252,17 @@ namespace MasterTrade.Vista.Herramientas.validaciones
         {
 
 
-            if (this.isVacio(this.input.Text)) this.input.Background = this.colorNegate;
-            else this.input.Background = this.colorValid;
+            if (this.isVacio(this.input.Text)) this.input.BorderBrush = this.colorNegate;
+            else this.input.BorderBrush = this.colorValid;
         }
         private void eventoValidaCorreoTexBox(object sender, KeyEventArgs e)
         {
-           this.input.Background = this.colorNegate;
+           this.input.BorderBrush = this.colorNegate;
 
          
-                if (reque && this.isCorreo(this.input.Text)) this.input.Background = this.colorValid;
-                else if (isVacio(this.input.Text) || this.isCorreo(this.input.Text)) this.input.Background = this.colorValid;
-            this.input.Text = this.input.Text.Replace(" ", String.Empty).Replace("", String.Empty);
+                if (reque && this.isCorreo(this.input.Text)) this.input.BorderBrush = this.colorValid;
+                else if (isVacio(this.input.Text) || !this.isCorreo(this.input.Text)) this.input.BorderBrush = this.colorNegate;
+            //this.input.Text = this.input.Text.Replace(" ", String.Empty).Replace("", String.Empty);
             this.input.Select(input.Text.Length, 0);
     
 
@@ -274,9 +274,9 @@ namespace MasterTrade.Vista.Herramientas.validaciones
 
         private void eventoValidaTelefonoKeyUp(object sender, KeyEventArgs e)
         {
-            this.input.Background = this.colorNegate;
-            if (reque && (this.isPhoneInternacional(this.input.Text)|| isPhoneNacional(this.input.Text))) this.input.Background = this.colorValid;
-            else if (isVacio(this.input.Text) || (this.isPhoneInternacional(this.input.Text) || isPhoneNacional(this.input.Text)) ) this.input.Background = this.colorValid;
+            this.input.BorderBrush = this.colorNegate;
+            if (reque && (this.isPhoneInternacional(this.input.Text)|| isPhoneNacional(this.input.Text))) this.input.BorderBrush = this.colorValid;
+            else if (isVacio(this.input.Text) || (this.isPhoneInternacional(this.input.Text) || isPhoneNacional(this.input.Text)) ) this.input.BorderBrush = this.colorValid;
         }
     }
 }

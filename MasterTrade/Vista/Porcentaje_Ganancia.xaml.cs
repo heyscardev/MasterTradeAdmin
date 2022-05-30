@@ -15,23 +15,18 @@ using System.Windows.Shapes;
 namespace MasterTrade.Vista
 {
     /// <summary>
-    /// Lógica de interacción para Ejemplo_Buscar.xaml
+    /// Lógica de interacción para Porcentaje_Ganancia.xaml
     /// </summary>
-    public partial class Ejemplo_Buscar : Window
+    public partial class Porcentaje_Ganancia : Window
     {
-        public Ejemplo_Buscar()
+        public Porcentaje_Ganancia()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         private void bttnAtras_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        private void bttnAceptar_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }

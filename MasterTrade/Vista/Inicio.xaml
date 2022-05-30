@@ -8,151 +8,54 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Loaded="UserControl_Loaded">
 
-    <Border Background="White"
+    <Border Background="{StaticResource azul2}"
                 CornerRadius="15">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Border Grid.Row="0"
-                    Background="#FFD261"
-                    Margin="10"
-                    CornerRadius="15">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="600"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0"
+        <Border Background="White"
+                Margin="10"
+                CornerRadius="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="500"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0"
                                 Margin="15"
                                 Orientation="Vertical"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center">
-                        <Image Height="80"
+                    <Image Height="80"
                                Width="80"
                                VerticalAlignment="Top"
                                HorizontalAlignment="Center"
                                Source="{StaticResource icono_proveedores_azul}"/>
-                        <Label Content="USUARIO"
+                    <Label  Content="USUARIO"
+                            FontSize="28"
+                            FontWeight="Bold"
+                            HorizontalAlignment="Center"
+                            Style="{StaticResource subtitulo}"/>
+                    <Label Content="NOMBRE Y APELLIDO"
+                               FontSize="22"
+                               HorizontalAlignment="Center"
+                               Style="{StaticResource subtitulo}"/>
+                    <Label Content="NIVEL"
                                FontSize="20"
                                HorizontalAlignment="Center"
                                Style="{StaticResource subtitulo}"/>
-                        <Label Content="Nombre y apellido"
-                               FontSize="15"
-                               HorizontalAlignment="Center"
-                               Style="{StaticResource subtitulo}"/>
-                        <Label Content="Nivel"
-                               FontSize="15"
-                               HorizontalAlignment="Center"
-                               Style="{StaticResource subtitulo}"/>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1"
+                </StackPanel>
+                <StackPanel Grid.Column="1"
                                 Orientation="Vertical"
                                 Margin="15">
-                        <Label Style="{StaticResource reloj}"
+                    <Label Style="{StaticResource reloj}"
                                x:Name="Reloj"/>
-                        <Label Content="DD/MM/AAAA"
+                    <Label Content="DD/MM/AAAA"
                                FontSize="15"
                                VerticalAlignment="Top"
                                HorizontalAlignment="Right"
                                FontWeight="Bold"
                                x:Name="Fecha"
                                Style="{StaticResource subtitulo}"/>
-                    </StackPanel>
-                </Grid>
-            </Border>
-            <StackPanel Grid.Row="1"
-                        Margin="15"
-                        Orientation="Horizontal"
-                        HorizontalAlignment="Center">
-                <Border Background="#FFD261"
-                        Height="170"
-                        Width="160"
-                        CornerRadius="15"
-                        Margin="10">
-                    <StackPanel Orientation="Vertical">
-                        <Image Width="42"
-                               Height="42"
-                               Margin="15"
-                               Source="{StaticResource icono_clientes_azul}"/>
-
-                        <Label Content="0"
-                           FontSize="20"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
-                        <Label Content="CLIENTES&#x0a;REGISTRADOS"
-                           FontSize="15"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
-                    </StackPanel>
-                    
-                </Border>
-                <Border Background="#FFD261"
-                        Height="170"
-                        Width="160"
-                        CornerRadius="15">
-                    <StackPanel Orientation="Vertical">
-                        <Image Width="42"
-                               Height="42"
-                               Margin="15"
-                               Source="{StaticResource icono_producto_azul}"/>
-
-                        <Label Content="0"
-                           FontSize="20"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
-                        <Label Content="PRODUCTOS&#x0a;REGISTRADOS"
-                           FontSize="15"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
-                    </StackPanel>
-                    
-                </Border>
-                <Border Background="#FFD261"
-                        Height="170"
-                        Width="160"
-                        CornerRadius="15"
-                        Margin="10">
-                    <StackPanel Orientation="Vertical">
-                        <Image Width="42"
-                               Height="42"
-                               Margin="15"
-                               Source="{StaticResource icono_compra_azul}"/>
-
-                        <Label Content="0"
-                           FontSize="20"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
-                        <Label Content="COMPRAS&#x0a;REGISTRADAS"
-                               FontSize="15"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"/>
-                    </StackPanel>
-                </Border>
-                <Border Background="#FFD261"
-                        Height="170"
-                        Width="160"
-                        CornerRadius="15"
-                        Margin="10">
-                    <StackPanel Orientation="Vertical">
-                        <Image Width="42"
-                               Height="42"
-                               Margin="15"
-                               Source="{StaticResource icono_venta_azul}"/>
-
-                        <Label Content="0"
-                           FontSize="20"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
-                        <Label Content="VENTAS&#x0a;REGISTRADAS"
-                               FontSize="15"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"/>
-
-                    </StackPanel>
-                </Border>
-            </StackPanel>
-        </Grid>
+                </StackPanel>
+            </Grid>
+        </Border>
     </Border>
 </UserControl>

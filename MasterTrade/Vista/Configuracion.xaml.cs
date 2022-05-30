@@ -10,28 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MasterTrade.Vista
 {
     /// <summary>
-    /// Lógica de interacción para Ejemplo_Buscar.xaml
+    /// Lógica de interacción para Configuracion.xaml
     /// </summary>
-    public partial class Ejemplo_Buscar : Window
+    public partial class Configuracion : UserControl
     {
-        public Ejemplo_Buscar()
+        public Configuracion()
         {
-            InitializeComponent();            
-        }
-
-        private void bttnAtras_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void bttnAceptar_Click(object sender, RoutedEventArgs e)
-        {
-            
+            InitializeComponent();
         }
     }
 }

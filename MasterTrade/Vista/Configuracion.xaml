@@ -1,0 +1,172 @@
+﻿<UserControl x:Class="MasterTrade.Vista.Configuracion"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MasterTrade.Vista"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="{StaticResource azul1}"
+            CornerRadius="0, 0, 15, 15">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0"
+                       Content="CONFIGURACIÓN"
+                       FontSize="30"
+                       Style="{StaticResource titulo}"/>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="10">
+                    <TextBlock Text="ACTUALIZACIÓN DE IMPUESTOS"
+                               FontSize="16"
+                               Style="{StaticResource subtitulo_blanco}"
+                               HorizontalAlignment="Left"
+                               FontWeight="Bold"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid Grid.Column="0"
+                                  Margin="0,6"
+                                  VerticalAlignment="Top"
+                                  HorizontalAlignment="Center"
+                                  Style="{StaticResource tablas}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="IVA" Width="100"/>
+                                <DataGridTextColumn Header="Descripción" Width="100"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Margin="2"
+                                    Grid.Column="1">
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="16,0">
+                                <TextBlock Text="IVA"
+                                           Style="{StaticResource subtitulo_blanco}"
+                                           FontSize="16"
+                                           FontWeight="Normal"/>
+                                <TextBox Style="{StaticResource TextBoxModerno}"
+                                         Margin="6,0,0,0"
+                                         Width="100"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical"
+                                        Margin="0,10">
+                                <TextBlock Text="Descripción"
+                                           Margin="0,8"
+                                           Style="{StaticResource subtitulo_blanco}"
+                                           FontSize="16"
+                                           FontWeight="Normal"
+                                           HorizontalAlignment="Center"/>
+                                <TextBox Style="{StaticResource TextBoxModerno}"
+                                         Width="100"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.Column="0"
+                            Grid.Row="1"
+                            Margin="10">
+                    <TextBlock Text="VALOR REFERENCIA DOLAR"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Style="{StaticResource subtitulo_blanco}"/>
+                    <TextBox Style="{StaticResource TextBoxModerno}"
+                              Width="100"
+                             HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1"
+                            Grid.Row="0"
+                            Margin="10">
+                    <TextBlock Text="ACTUALIZACIÓN DE PRECIOS"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Style="{StaticResource subtitulo_blanco}"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+              
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="0"
+                                   Text="Precio 1"
+                                   FontSize="16"
+                                   FontWeight="Normal"
+                                   HorizontalAlignment="Center"
+                                   Style="{StaticResource subtitulo_blanco}"/>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="1"
+                                   Text="Precio 2"
+                                   FontSize="16"
+                                   FontWeight="Normal"
+                                   HorizontalAlignment="Center"
+                                   Style="{StaticResource subtitulo_blanco}"/>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="2"
+                                   Text="Precio 3"
+                                   FontSize="16"
+                                   FontWeight="Normal"
+                                   HorizontalAlignment="Center"
+                                   Style="{StaticResource subtitulo_blanco}"/>
+                        <TextBox Grid.Column="1"
+                                 Grid.Row="0"
+                                 Style="{StaticResource TextBoxModerno}"
+                                 Width="100"/>
+                        <TextBox Grid.Column="1"
+                                 Grid.Row="1"
+                                 Style="{StaticResource TextBoxModerno}"
+                                 Width="100"/>
+                        <TextBox Grid.Column="1"
+                                 Grid.Row="2"
+                                 Style="{StaticResource TextBoxModerno}"
+                                 Width="100"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="3"
+                        Content="GUARDAR"
+                        Margin="5"
+                        Style="{StaticResource BlankButton}"/>
+                <Button Grid.Column="4"
+                        Content="CANCELAR"
+                        Margin="5"
+                        Style="{StaticResource BlankButton}"/>
+                <Button Grid.Column="5"
+                        Content="ELIMINAR"
+                        Margin="5"
+                        Style="{StaticResource BlankButton}"/>
+            </Grid>
+        </Grid>
+
+    </Border>
+</UserControl>

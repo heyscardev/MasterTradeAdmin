@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="MasterTrade.Vista.Auditoria"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MasterTrade.Vista"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="{StaticResource azul1}"
+            CornerRadius="0, 0, 15, 15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="65"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Content="AUDITORÍA"
+                   FontSize="30"
+                   Style="{StaticResource titulo}"/>
+            <Grid Grid.Row="1"
+                  Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="600"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="FILTRADO:"
+                           FontSize="20"
+                           Margin="10"
+                           Style="{StaticResource subtitulo_blanco}"/>
+                <StackPanel Grid.Column="1"
+                            Margin="10"
+                            Orientation="Horizontal">
+                    <Image Width="32"
+                       Height="32"
+                       Source="{StaticResource icono_buscar}"
+                       Margin="0, 0, 5, 0"/>
+                    <TextBox VerticalAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Text="Buscar..."
+                         Width="300"
+                         Height="AUTO"
+                         Style="{StaticResource TextBoxModerno}"/>
+                </StackPanel>
+            </Grid>
+            <DataGrid Grid.Row="2"
+                      Margin="10, 0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID"/>
+                    <DataGridTextColumn Header="USUARIO"/>
+                    <DataGridTextColumn Header="MODULO"/>
+                    <DataGridTextColumn Header="ACCION"/>
+                    <DataGridTextColumn Header="FECHA"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Grid.Row="3"
+                    Content="PDF"
+                    Height="50"
+                    Width="100"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource BlankButton}"/>
+        </Grid>
+    </Border>
+</UserControl>

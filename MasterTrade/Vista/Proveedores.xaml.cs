@@ -1,21 +1,8 @@
 ﻿
-using MasterTrade.Modelo.Entidades;
 using MasterTrade.Vista.Herramientas.validaciones;
-using MasterTrade.VistaModelo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MasterTrade.Vista
 {
@@ -46,7 +33,6 @@ namespace MasterTrade.Vista
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             Set_Botones("INICIO");
-            Set_DatePicker();
             Set_TextBoxes(false);
             gridElementos.Visibility = Visibility.Collapsed;
         }
@@ -108,11 +94,6 @@ namespace MasterTrade.Vista
             }
         }
 
-        public void Set_DatePicker()
-        {
-            dtNacimiento.SelectedDate = System.DateTime.Today;
-        }
-
         public void Clear_Campos()
         {
             txtDocumento.Text = "";
@@ -120,7 +101,6 @@ namespace MasterTrade.Vista
             txtDireccion.Text = "";
             txtTelefono.Text = "";
             txtCorreo.Text = "";
-            dtNacimiento.SelectedDate = System.DateTime.Today;
         }
 
         public void Set_TextBoxes(bool estado)
@@ -130,9 +110,7 @@ namespace MasterTrade.Vista
             txtDireccion.IsEnabled = estado;
             txtTelefono.IsEnabled = estado;
             txtCorreo.IsEnabled = estado;
-            dtNacimiento.IsEnabled = estado;
             comboDocumento.IsEnabled = estado;
-            comboTelefono.IsEnabled = estado;
         }
 
         private void bttnGuardar_Click(object sender, RoutedEventArgs e)

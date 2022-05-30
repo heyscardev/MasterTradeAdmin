@@ -16,6 +16,8 @@
     <None Remove="Vista\Recursos\Iconos\amarillo_comprar.png" />
     <None Remove="Vista\Recursos\Iconos\amarillo_Eliminar.png" />
     <None Remove="Vista\Recursos\Iconos\amarillo_inicio.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_logo.png" />
+    <None Remove="Vista\Recursos\Iconos\amarillo_precios.png" />
     <None Remove="Vista\Recursos\Iconos\amarillo_productos.png" />
     <None Remove="Vista\Recursos\Iconos\amarillo_proveedores.png" />
     <None Remove="Vista\Recursos\Iconos\amarillo_vender.png" />
@@ -29,6 +31,8 @@
     <None Remove="Vista\Recursos\Iconos\azul_eliminar.png" />
     <None Remove="Vista\Recursos\Iconos\azul_guardar.png" />
     <None Remove="Vista\Recursos\Iconos\azul_inicio.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_logo.png" />
+    <None Remove="Vista\Recursos\Iconos\azul_precios.png" />
     <None Remove="Vista\Recursos\Iconos\azul_productos.png" />
     <None Remove="Vista\Recursos\Iconos\azul_proveedores.png" />
     <None Remove="Vista\Recursos\Iconos\azul_vender.png" />
@@ -38,6 +42,9 @@
     <None Remove="Vista\Recursos\Iconos\blanco_cancelar.png" />
     <None Remove="Vista\Recursos\Iconos\blanco_eliminar.png" />
     <None Remove="Vista\Recursos\Iconos\blanco_guardar.png" />
+    <None Remove="Vista\Recursos\Iconos\blanco_logo.png" />
+    <None Remove="Vista\Recursos\Iconos\blanco_precios.png" />
+    <None Remove="Vista\Recursos\Iconos\IconoBuscar.png" />
     <None Remove="Vista\Recursos\Iconos\IconoCasa.png" />
     <None Remove="Vista\Recursos\Iconos\IconoCerrar.png" />
     <None Remove="Vista\Recursos\Iconos\IconoCerrarSesion.png" />
@@ -53,6 +60,7 @@
     <None Remove="Vista\Recursos\Iconos\IconoXRed.png" />
     <None Remove="Vista\Recursos\Iconos\rojo_cancelar.png" />
     <None Remove="Vista\Recursos\Imagenes\Avatar.png" />
+    <None Remove="Vista\Recursos\Imagenes\Backgrounds\Background1.png" />
     <None Remove="Vista\Recursos\Imagenes\Fondo.jpg" />
     <None Remove="Vista\Recursos\Imagenes\Logo.png" />
     <None Remove="Vista\Recursos\Letras\Anton-Regular.ttf" />
@@ -112,6 +120,12 @@
     <Resource Include="Vista\Recursos\Iconos\amarillo_inicio.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Vista\Recursos\Iconos\amarillo_logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\amarillo_precios.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Vista\Recursos\Iconos\amarillo_productos.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -151,6 +165,12 @@
     <Resource Include="Vista\Recursos\Iconos\azul_inicio.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\azul_precios.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Vista\Recursos\Iconos\azul_productos.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -178,23 +198,61 @@
     <Resource Include="Vista\Recursos\Iconos\blanco_guardar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Vista\Recursos\Iconos\IconoCerrarSesion.png" />
-    <Resource Include="Vista\Recursos\Iconos\IconoCasa.png" />
-    <Resource Include="Vista\Recursos\Iconos\IconoCerrar.png" />
-    <Resource Include="Vista\Recursos\Iconos\IconoCliente.png" />
-    <Resource Include="Vista\Recursos\Iconos\IconoCompra.png" />
-    <Resource Include="Vista\Recursos\Iconos\IconoCompraAdd.png" />
-    <Resource Include="Vista\Recursos\Iconos\IconoImageAdd.png" />
-    <Resource Include="Vista\Recursos\Iconos\IconoMenu.png" />
-    <Resource Include="Vista\Recursos\Iconos\IconoProducto.png" />
-    <Resource Include="Vista\Recursos\Iconos\IconoReporte.png" />
-    <Resource Include="Vista\Recursos\Iconos\IconoVentas.png" />
-    <Resource Include="Vista\Recursos\Iconos\IconoXBlue.png" />
-    <Resource Include="Vista\Recursos\Iconos\IconoXRed.png" />
+    <Resource Include="Vista\Recursos\Iconos\blanco_logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\blanco_precios.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoBuscar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoCerrarSesion.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoCasa.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoCerrar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoCliente.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoCompra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoCompraAdd.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoImageAdd.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoMenu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoProducto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoReporte.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoVentas.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoXBlue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Vista\Recursos\Iconos\IconoXRed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Vista\Recursos\Iconos\rojo_cancelar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Vista\Recursos\Imagenes\Avatar.png" />
+    <Resource Include="Vista\Recursos\Imagenes\Backgrounds\Background1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Vista\Recursos\Imagenes\Fondo.jpg" />
     <Resource Include="Vista\Recursos\Imagenes\Logo.png" />
     <Resource Include="Vista\Recursos\Letras\Anton-Regular.ttf">

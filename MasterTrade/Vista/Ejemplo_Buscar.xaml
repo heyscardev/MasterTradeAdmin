@@ -61,6 +61,8 @@
                         Width="100"
                         Content="ACEPTAR"
                         Margin="5, 0, 0, 0"
+                        x:Name="bttnAceptar"
+                        Click="bttnAceptar_Click"
                         Style="{StaticResource BlankButton}"/>
             </StackPanel>
         </Grid>

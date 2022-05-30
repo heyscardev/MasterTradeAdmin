@@ -1,0 +1,82 @@
+﻿<Window x:Class="MasterTrade.Vista.Porcentaje_Ganancia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MasterTrade.Vista"
+        mc:Ignorable="d"
+        Title="Porcentajes de ganancia" Height="450" Width="300"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent">
+    <Border CornerRadius="20"
+            Background="{StaticResource purpura}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="380"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="10"
+                        Orientation="Vertical">
+                <Label Content="PORCENTAJES DE GANANCIA"
+                           FontSize="20"
+                           Margin="0,0,0,25"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource titulo}"/>
+                <TextBlock Text="PORCENTAJE PARA VENTAS AL MAYOR"
+                           FontSize="12"
+                           Margin="0,0,0,10"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource subtitulo2}"/>
+                <TextBox Margin="0,0,0,20"
+                         Height="35"
+                         Width="AUTO"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center"
+                             Style="{StaticResource TextBoxModerno}"/>
+                <TextBlock Text="PORCENTAJE PARA CLIENTELA GENERAL"
+                           FontSize="12"
+                           Margin="0,0,0,10"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource subtitulo2}"/>
+                <TextBox Margin="0,0,0,20"
+                             Height="35"
+                             Width="AUTO"
+                             Style="{StaticResource TextBoxModerno}"/>
+                <TextBlock Text="PORCENTAJE PARA VENTAS A CRÉDITO"
+                           FontSize="12"
+                           Margin="0,0,0,10"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource subtitulo2}"/>
+                <TextBox Margin="0,0,0,20"
+                             Height="35"
+                             Width="AUTO"
+                             Style="{StaticResource TextBoxModerno}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"
+                        Margin="10"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right">
+                <Button Height="40"
+                        Width="85"
+                        Content="ATRÁS"
+                        x:Name="bttnAtras"
+                        Margin="0, 0, 5, 0"
+                        Click="bttnAtras_Click"
+                        Style="{StaticResource BlankButton}"/>
+                <Button Height="40"
+                        Width="85"
+                        Content="ACEPTAR"
+                        Margin="5, 0, 0, 0"
+                        Style="{StaticResource BlankButton}"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

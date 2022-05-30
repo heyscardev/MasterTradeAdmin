@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Loaded="UserControl_Loaded_1">
-    <Border Background="White"
+    <Border Background="{StaticResource azul2}"
             CornerRadius="15">
         <Grid Background="Transparent">
             <Grid.ColumnDefinitions>
@@ -67,7 +67,7 @@
                     <TextBlock Text="NOMBRE DEL PRODUCTO"
                                Margin="0, 0, 0, 2"
                                Style="{StaticResource subtitulo2}"/>
-                    <TextBox Style="{StaticResource TextBoxModerno}"
+                    <TextBox Style="{StaticResource TextBoxAuto}"
                              VerticalAlignment="Center"
                              HorizontalAlignment="Left"
                              Margin="0, 0, 0, 15"
@@ -77,7 +77,7 @@
                     <TextBlock Text="CÓDGO DE BARRAS"
                                Margin="0, 0, 0, 2"
                                Style="{StaticResource subtitulo2}"/>
-                    <TextBox Style="{StaticResource TextBoxModerno}"
+                    <TextBox Style="{StaticResource TextBoxAuto}"
                              VerticalAlignment="Center"
                              HorizontalAlignment="Left"
                              Margin="0, 0, 0, 15"
@@ -97,7 +97,7 @@
                                  Style="{StaticResource TextBoxModerno}"/>
                         <Label Margin="5,0,0,20"
                                Content="UNIDADES"
-                               Foreground="#1C3AA4"
+                               Foreground="{StaticResource amarillo1}"
                                VerticalAlignment="Center"
                                FontSize="14"/>
                     </StackPanel>
@@ -127,29 +127,32 @@
                     <TextBlock Text="RAZÓN SOCIAL"
                                Margin="0, 0, 0, 2"
                                Style="{StaticResource subtitulo2}"/>
-                    <TextBox Style="{StaticResource TextBoxModerno}"
+                    <TextBox Style="{StaticResource TextBoxAuto}"
                              VerticalAlignment="Center"
                              HorizontalAlignment="Left"
                              Margin="0, 0, 0, 15"
+                             x:Name="txtRazonSocial"
                              Width="200"/>
 
                     <TextBlock Text="DOCUMENTO DE IDENTIDAD"
                                Margin="0, 0, 0, 2"
                                Style="{StaticResource subtitulo2}"/>
-                    <TextBox Style="{StaticResource TextBoxModerno}"
+                    <TextBox Style="{StaticResource TextBoxAuto}"
                              VerticalAlignment="Center"
                              HorizontalAlignment="Left"
+                             x:Name="txtIdentidad"
                              Margin="0, 0, 0, 15"
                              Width="200"/>
 
                     <TextBlock Text="NÚMERO TELEFÓNICO"
                                Margin="0, 0, 0, 2"
                                Style="{StaticResource subtitulo2}"/>
-                    <TextBox Style="{StaticResource TextBoxModerno}"
+                    <TextBox Style="{StaticResource TextBoxAuto}"
                              VerticalAlignment="Center"
                              HorizontalAlignment="Left"
                              Margin="0, 0, 0, 15"
-                             Width="200"/>
+                             x:Name="txtTelefono"
+                             Width="200" TextChanged="TextBox_TextChanged"/>
                 </StackPanel>
             </Grid>
 
@@ -184,9 +187,9 @@
                         x:Name="stackCarrito">
                 <Image Height="32"
                        Width="32"
-                       Source="{StaticResource icono_compra_azul}"/>
+                       Source="{StaticResource icono_compra}"/>
                 <Label Content="CARRITO"
-                       Foreground="#1C3A4A"
+                       Foreground="{StaticResource amarillo1}"
                        VerticalAlignment="Center"
                        FontWeight="Medium"
                        Margin="2, 0, 0, 0"
@@ -199,13 +202,13 @@
                 <DataGrid Margin="5"
                           HorizontalAlignment="Stretch"
                           VerticalAlignment="Stretch"
-                          Height="270"
+                          Height="AUTO"
+                          Style="{StaticResource tablas}"
                           x:Name="gridDetalles">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="CÓDIGO DEL PRODUCTO"/>
-                        <DataGridTextColumn Header="NOMBRE"
-                                        Width="AUTO"/>
-                        <DataGridTextColumn Header="CANTIDAD"/>
+                        <DataGridTextColumn Header="CÓDIGO" Width="110"/>
+                        <DataGridTextColumn Header="NOMBRE" Width="110"/>
+                        <DataGridTextColumn Header="CANTIDAD" Width="110"/>
                     </DataGrid.Columns>
                 </DataGrid>
                 <Label Content="TOTAL: 0.00$"

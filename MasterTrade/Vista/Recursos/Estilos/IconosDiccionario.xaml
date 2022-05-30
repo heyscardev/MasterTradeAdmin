@@ -4,7 +4,8 @@
         x:Key="imagen_btn_cerrar"
         ImageSource="/Vista/Recursos/Iconos/IconoXRed.png"
         Stretch="Fill" />
-    
+
+    <ImageBrush x:Key="background1" ImageSource="/Vista/Recursos/Imagenes/Backgrounds/Background1.png" />
     <ImageBrush x:Key="icono_cerrar_azul" ImageSource="/Vista/Recursos/Iconos/IconoXBlue.png" />
     <BitmapImage x:Key="icono_cliente_pricipal" UriSource="/Vista/Recursos/Iconos/IconoCliente.png" />    
     <BitmapImage x:Key="icono_cerrar_sesion" UriSource="/Vista/Recursos/Iconos/IconoCerrarSesion.png" />
@@ -13,8 +14,8 @@
     <ImageBrush x:Key="icono_menu" ImageSource="/Vista/Recursos/Iconos/IconoMenu.png" />    
     <BitmapImage x:Key="icono_reporte" UriSource="/Vista/Recursos/Iconos/IconoReporte.png" />
     <ImageBrush x:Key="icono_agnadirusuario" ImageSource="/Vista/Recursos/Iconos/blanco_anadirUsuario.png" />
-    
-    
+
+
     <!--ICONOS AMARILLOS-->
     <BitmapImage x:Key="icono_casa" UriSource="/Vista/Recursos/Iconos/amarillo_inicio.png" />
     <BitmapImage x:Key="icono_clientes" UriSource="/Vista/Recursos/Iconos/amarillo_clientes.png" />
@@ -25,6 +26,8 @@
     <BitmapImage x:Key="icono_anadir" UriSource="/Vista/Recursos/Iconos/amarillo_anadirUsuario.png" />
     <BitmapImage x:Key="icono_buscar" UriSource="/Vista/Recursos/Iconos/amarillo_Buscar.png" />
     <BitmapImage x:Key="icono_ajustes" UriSource="/Vista/Recursos/Iconos/amarillo_ajustes.png" />
+    <BitmapImage x:Key="icono_precios" UriSource="/Vista/Recursos/Iconos/amarillo_precios.png" />
+    <BitmapImage x:Key="logo" UriSource="/Vista/Recursos/Iconos/amarillo_logo.png" />
     <!--ICONOS AMARILLOS-->
 
     <!--ICONOS BLANCOS-->
@@ -34,6 +37,8 @@
     <BitmapImage x:Key="icono_guardar_blanco" UriSource="/Vista/Recursos/Iconos/blanco_guardar.png" />
     <BitmapImage x:Key="icono_actualizar_blanco" UriSource="/Vista/Recursos/Iconos/blanco_actualizar.png" />
     <BitmapImage x:Key="icono_eliminar_blanco" UriSource="/Vista/Recursos/Iconos/blanco_eliminar.png" />
+    <BitmapImage x:Key="icono_precios_blanco" UriSource="/Vista/Recursos/Iconos/blanco_precios.png" />
+    <BitmapImage x:Key="logo_blanco" UriSource="/Vista/Recursos/Iconos/blanco_logo.png" />
     <!--ICONOS BLANCOS-->
 
     <!--ICONOS AZULES-->
@@ -50,6 +55,8 @@
     <BitmapImage x:Key="icono_actualizar_azul" UriSource="/Vista/Recursos/Iconos/azul_actualizar.png" />
     <BitmapImage x:Key="icono_eliminar_azul" UriSource="/Vista/Recursos/Iconos/azul_eliminar.png" />
     <BitmapImage x:Key="icono_ajustes_azul" UriSource="/Vista/Recursos/Iconos/azul_ajustes.png" />
+    <BitmapImage x:Key="icono_precios_azul" UriSource="/Vista/Recursos/Iconos/azul_precios.png" />
+    <BitmapImage x:Key="logo_azul" UriSource="/Vista/Recursos/Iconos/azul_logo.png" />
     <!--ICONOS AZULES-->
 
 </ResourceDictionary>

@@ -10,7 +10,8 @@
     Background="Transparent"
     Loaded="UserControl_Loaded"
     mc:Ignorable="d">
-    <Border Background="White" CornerRadius="15">
+    <Border Background="{StaticResource azul2}"
+            CornerRadius="15">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="550" />
@@ -90,11 +91,14 @@
                         Margin="0,0,0,10"
                         FontSize="14"
                         Style="{StaticResource subtitulo2}"
-                        Text="FECHA DE NACIMIENTO" />
-                    <DatePicker
-                        x:Name="dtNacimiento"
+                        Text="DIRECCIÓN" />
+                    <TextBox
+                        x:Name="txtDireccion"
+                        Width="AUTO"
                         Height="35"
-                        Margin="0,0,0,20" />
+                        Margin="0,0,0,20"
+                        Style="{StaticResource TextBoxModerno}"
+                        Tag="Introduzca Direccion" />
                 </StackPanel>
 
                 <StackPanel
@@ -104,40 +108,19 @@
                     Margin="0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-                    <TextBlock
-                        Margin="0,0,0,10"
-                        FontSize="14"
-                        Style="{StaticResource subtitulo2}"
-                        Text="DIRECCIÓN" />
-                    <TextBox
-                        x:Name="txtDireccion"
-                        Width="AUTO"
-                        Height="35"
-                        Margin="0,0,0,20"
-                        Style="{StaticResource TextBoxModerno}"
-                        Tag="Introduzca Direccion" />
+                    
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="14"
                         Style="{StaticResource subtitulo2}"
                         Text="TELÉFONO" />
-                    <StackPanel
-                        Width="AUTO"
-                        Height="AUTO"
-                        Orientation="Horizontal">
-                        <ComboBox
-                            x:Name="comboTelefono"
-                            Width="50"
-                            Height="35"
-                            Margin="0,0,0,20" />
-                        <TextBox
+                    <TextBox
                             x:Name="txtTelefono"
-                            Width="142"
+                            Width="AUTO"
                             Height="35"
-                            Margin="5,0,0,20"
+                            Margin="0,0,0,20"
                             Style="{StaticResource TextBoxModerno}"
                             Tag="Introduzca telefono" />
-                    </StackPanel>
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="14"
@@ -274,7 +257,7 @@
                         Background="Transparent"
                         BorderBrush="Transparent"
                         Content="AGREGAR IMAGEN"
-                        Foreground="Blue" />
+                        Foreground="{StaticResource amarillo1}" />
                 </StackPanel>
                 <Button
                     x:Name="bttnRegistros"
@@ -284,7 +267,7 @@
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Content="Registros del proveedor&gt;"
-                    Foreground="Blue" />
+                    Foreground="{StaticResource amarillo1}" />
             </Grid>
 
         </Grid>

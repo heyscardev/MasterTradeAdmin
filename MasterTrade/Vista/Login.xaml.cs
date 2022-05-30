@@ -15,23 +15,18 @@ using System.Windows.Shapes;
 namespace MasterTrade.Vista
 {
     /// <summary>
-    /// Lógica de interacción para Ejemplo_Buscar.xaml
+    /// Lógica de interacción para Login.xaml
     /// </summary>
-    public partial class Ejemplo_Buscar : Window
+    public partial class Login : Window
     {
-        public Ejemplo_Buscar()
+        public Login()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
-        private void bttnAtras_Click(object sender, RoutedEventArgs e)
+        private void bttnIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-        }
-
-        private void bttnAceptar_Click(object sender, RoutedEventArgs e)
-        {
-            
+            stage_Principal.Content = new Sesion_iniciada();
         }
     }
 }

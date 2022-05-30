@@ -6,11 +6,12 @@ namespace MasterTrade.VistaModelo
     {
         //COMANDOS PARA CAMBIAR VISTAS
         public ComandoRelay VistaInicioComando { get; set; }
-        public ComandoRelay VistaRegistroComando{ get; set; }
-        public ComandoRelay VistaProveedoresComando{ get; set; }
+        public ComandoRelay VistaRegistroComando { get; set; }
+        public ComandoRelay VistaProveedoresComando { get; set; }
         public ComandoRelay VistaProductosComando { get; set; }
         public ComandoRelay VistaComprarComando { get; set; }
         public ComandoRelay VistaVenderComando { get; set; }
+        public ComandoRelay VistaSeguridadComando { get; set; }
         //COMANDOS PARA CAMBIAR VISTAS
 
         //DECLARACIÓN DE LAS VISTAS
@@ -20,15 +21,16 @@ namespace MasterTrade.VistaModelo
         public VistaModelo_Productos VMProductos { get; set; }
         public VistaModelo_Comprar VMComprar { get; set; }
         public VistaModelo_Vender VMVender { get; set; }
+        public VistaModelo_SeguridadMantenimiento VMSeguridad { get; set; }
         //DECLARACIÓN DE LAS VISTAS
-
 
         private object vista_actual;
 
         public object VistaActual
         {
             get { return vista_actual; }
-            set {
+            set
+            {
                 vista_actual = value;
                 OnPropertyChanged();
             }
@@ -42,6 +44,7 @@ namespace MasterTrade.VistaModelo
             VMProductos = new VistaModelo_Productos();
             VMComprar = new VistaModelo_Comprar();
             VMVender = new VistaModelo_Vender();
+            VMSeguridad = new VistaModelo_SeguridadMantenimiento();
 
             VistaActual = VMInicio;
 
@@ -50,7 +53,7 @@ namespace MasterTrade.VistaModelo
                 VistaActual = VMInicio;
             });
 
-            VistaRegistroComando = new ComandoRelay(o => 
+            VistaRegistroComando = new ComandoRelay(o =>
             {
                 VistaActual = VMRegistro;
             });
@@ -73,6 +76,11 @@ namespace MasterTrade.VistaModelo
             VistaVenderComando = new ComandoRelay(o =>
             {
                 VistaActual = VMVender;
+            });
+
+            VistaSeguridadComando = new ComandoRelay(o =>
+            {
+                VistaActual = VMSeguridad;
             });
         }
     }

@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="MasterTrade.Vista.SeguridadMantenimiento"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MasterTrade.Vista"
+              xmlns:viewModel="clr-namespace:MasterTrade.VistaModelo"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModel:VistaModelo_SeguridadMantenimiento/>
+    </UserControl.DataContext>
+    <Border Background="{StaticResource azul2}"
+            CornerRadius="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0"
+                    Background="{StaticResource azul1}"
+                    CornerRadius="15, 15, 0, 0"
+                    Margin="10, 10, 10, 0">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <RadioButton Content="RESPALDO"
+                                 Height="50"
+                                 FontSize="14"
+                                 IsChecked="True"
+                                 Style="{StaticResource BotonesMantenimiento}"
+                                 GroupName="Botones_Menu2"
+                                 Command="{Binding VistaRespaldoComando}"/>
+                    <RadioButton Content="REPORTES"
+                                 Height="50"
+                                 FontSize="14"
+                                 Command="{Binding VistaReportesComando}"
+                                 Style="{StaticResource BotonesMantenimiento}"
+                                 GroupName="Botones_Menu2"/>
+                    <RadioButton Content="AUDITORIA"
+                                 Height="50"
+                                 FontSize="14"
+                                 Command="{Binding VistaAuditoriaComando}"
+                                 Style="{StaticResource BotonesMantenimiento}"
+                                 GroupName="Botones_Menu2"/>
+                    <RadioButton Content="USUARIOS"
+                                 Height="50"
+                                 FontSize="14"
+                                 Command="{Binding VistaUsuariosComando}"
+                                 Style="{StaticResource BotonesMantenimiento}"
+                                 GroupName="Botones_Menu2"/>
+                    <RadioButton Content="CONFIGURACIÓN"
+                                 Height="50"
+                                 FontSize="14"
+                                 Command="{Binding VistaConfiguracionComando}"
+                                 Style="{StaticResource BotonesMantenimiento}"
+                                 GroupName="Botones_Menu2"/>
+                </StackPanel>
+            </Border>
+            <ContentControl x:Name="contenedor_ventana"
+                Grid.Row="1"
+                Margin="10, 0, 10, 10"
+                Content="{Binding VistaSeguridad}"/>
+        </Grid>
+    </Border>
+</UserControl>

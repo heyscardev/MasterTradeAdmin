@@ -6,7 +6,7 @@
     xmlns:viewModel="clr-namespace:MasterTrade.VistaModelo"
     xmlns:view="clr-namespace:MasterTrade.Vista.Reuitilizable"
     xmlns:view2="clr-namespace:MasterTrade.Vista"
-    StartupUri="/Vista/Main.xaml">
+    StartupUri="/Vista/Login.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -17,17 +17,18 @@
                 <ResourceDictionary Source="/Vista/Recursos/Estilos/EstiloTextBoxes.xaml"/>
                 <ResourceDictionary Source="/Vista/Recursos/Estilos/EstiloBotonesAcciones.xaml"/>
                 <ResourceDictionary Source="/Vista/Recursos/Estilos/Estilos_Labels.xaml"/>
+                <ResourceDictionary Source="/Vista/Recursos/Estilos/DataGridEstilos.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <!--VISTAS-->
             <DataTemplate DataType="{x:Type viewModel:VistaModelo_Inicio}">
                 <view2:Inicio/>
             </DataTemplate>
-            
+
             <DataTemplate DataType="{x:Type viewModel:VistaModelo_Registro}">
                 <view:Registro/>
             </DataTemplate>
-            
+
             <DataTemplate DataType="{x:Type viewModel:VistaModelo_Proveedores}">
                 <view2:Proveedores/>
             </DataTemplate>
@@ -42,6 +43,34 @@
 
             <DataTemplate DataType="{x:Type viewModel:VistaModelo_Vender}">
                 <view2:Vender/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_SeguridadMantenimiento}">
+                <view2:SeguridadMantenimiento/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_Historial}">
+                <view2:Historial/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_Auditoria}">
+                <view2:Auditoria/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_Configuracion}">
+                <view2:Configuracion/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_Reportes}">
+                <view2:Reportes/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_Respaldo}">
+                <view2:Respaldo/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:VistaModelo_Usuario}">
+                <view2:Usuarios/>
             </DataTemplate>
             <!--VISTAS-->
         </ResourceDictionary>

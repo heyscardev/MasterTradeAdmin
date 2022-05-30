@@ -8,8 +8,8 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Background="Transparent"
              Loaded="UserControl_Loaded">
-    
-    <Border Background="White"
+
+    <Border Background="{StaticResource azul2}"
             CornerRadius="15">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -26,7 +26,6 @@
                    Grid.Column="0"
                    Content="REGISTRAR PRODUCTO:"
                    FontSize="40"
-                   Foreground="#1C3A4A"
                    Margin="0, 5, 0, 0"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
@@ -60,24 +59,44 @@
                              Width="AUTO"
                              x:Name="txtNombre"
                              Style="{StaticResource TextBoxModerno}"/>
-                    <TextBlock Text="CANTIDAD DISPONIBLE"
-                           FontSize="14"
-                           Margin="0,0,0,10"
-                           Style="{StaticResource subtitulo2}"/>
-                    <StackPanel Orientation="Horizontal"
-                                Height="AUTO">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical"
+                                    Height="AUTO"
+                                    Grid.Column="0">
+                        <TextBlock Text="CANTIDAD&#x0a;DISPONIBLE"
+                                   FontSize="14"
+                                   Margin="0,0,0,10"
+                                   Style="{StaticResource subtitulo2}"/>
                         <TextBox Margin="0,0,0,20"
-                                 Width="50"
-                                 Height="35"
-                                 Text="0"
-                                 IsEnabled="False"
-                                 x:Name="txtCantidad"
-                                 Style="{StaticResource TextBoxModerno}"/>
-                        <Label Margin="0,0,0,20"
-                               Content="UNIDADES"
-                               Foreground="#1C3AA4"
-                               FontSize="14"/>
-                    </StackPanel>
+                                Width="50"
+                                Height="35"
+                                Text="0"
+                                IsEnabled="False"
+                                HorizontalAlignment="Left"
+                                x:Name="txtCantidad"
+                                Style="{StaticResource TextBoxAuto}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical"
+                                    Height="AUTO"
+                                    Grid.Column="1">
+                            <TextBlock Text="COSTO ($)"
+                                   FontSize="14"
+                                   Margin="0,0,0,10"
+                                   Style="{StaticResource subtitulo2}"/>
+                            <TextBox Margin="0,0,0,20"
+                                     Width="100"
+                                     Height="35"
+                                     IsEnabled="False"
+                                     VerticalAlignment="Bottom"     
+                                     x:Name="txtCosto"
+                                     Style="{StaticResource TextBoxModerno}"/>
+                        </StackPanel>
+
+                    </Grid>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1"
@@ -243,7 +262,7 @@
                        Margin="10"/>
                     <Button Height="50"
                         Content="AGREGAR IMAGEN"
-                        Foreground="Blue"
+                        Foreground="{StaticResource amarillo1}"
                         Background="Transparent"
                         BorderBrush="Transparent"/>
                 </StackPanel>
@@ -251,7 +270,7 @@
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         Content="Operaciones del producto>"
-                        Foreground="Blue"
+                        Foreground="{StaticResource amarillo1}"
                         Background="Transparent"
                         BorderBrush="Transparent"
                         x:Name="bttnRegistros"/>
