@@ -15,8 +15,8 @@ namespace MasterTrade.VistaModelo
         {
             if(p == null)return null;
             db.Proveedores.Add(p);
-            MessageBox.Show();
-           // db.SaveChanges();
+           
+            db.SaveChanges();
             return p;
         }
         //modifica 
