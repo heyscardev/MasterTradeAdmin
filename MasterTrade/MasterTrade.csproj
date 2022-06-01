@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Vista\Reuitilizable\InputDataEntidad.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Vista\Recursos\Iconos\amarillo_Actualizar.png" />
     <None Remove="Vista\Recursos\Iconos\amarillo_ajustes.png" />
     <None Remove="Vista\Recursos\Iconos\amarillo_anadirUsuario.png" />
@@ -66,6 +70,10 @@
     <None Remove="Vista\Recursos\Letras\Anton-Regular.ttf" />
     <None Remove="Vista\Recursos\Letras\OpenSans-Italic-VariableFont_wdth,wght.ttf" />
     <None Remove="Vista\Recursos\Letras\OpenSans-VariableFont_wdth,wght.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Vista\Reuitilizable\InputDataEntidad.xaml" />
   </ItemGroup>
 
   <ItemGroup>

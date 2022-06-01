@@ -2,6 +2,8 @@
 using MasterTrade.Modelo.Heredable;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace MasterTrade.Modelo.Entidades
@@ -20,7 +22,8 @@ namespace MasterTrade.Modelo.Entidades
         [MaxLength(200)]
         public string Apellido { get; set; }
         public bool Status { get; set; }
-        
+        public virtual ICollection<Auditoria> Auditoria { get; private set; } = new ObservableCollection<Auditoria>();
+
     }
    
 }

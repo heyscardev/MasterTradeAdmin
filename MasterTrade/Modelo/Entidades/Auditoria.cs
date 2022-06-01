@@ -11,9 +11,7 @@ namespace MasterTrade.Modelo.Entidades
         public string Modulo { get; set; }
         [MaxLength(200)]
         public string Operacion { get; set; }
-        [MaxLength(100)]
-        public string Estacion { get; set; }
-        [MaxLength(100)]
+        [MaxLength(150)]
         public string Observacion { get; set; }
         public virtual Usuario Usuario { get; set; }
 
