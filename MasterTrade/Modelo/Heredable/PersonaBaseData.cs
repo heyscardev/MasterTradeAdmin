@@ -27,6 +27,7 @@ namespace MasterTrade.Modelo.Heredable
         [MaxLength(250)]
         [Column(Order = 6)]
         public string? Direccion { get; set; }
-        [MaxLength(250)]
+
+
     }
 }

@@ -21,10 +21,11 @@ namespace MasterTrade.Modelo.Contexto
         public DbSet<Compra> Compras { get; set; }
         public DbSet<CompraProducto> CompraProductos { get; set; }
         public DbSet<Venta> Ventas { get; set; }
-        public DbSet<VentaProducto> DetalleVenta { get; set; }
-        public DbSet<Auditoria> Auditoria { get; set; }
-        public DbSet<Impuesto> Impuesto { get; set; }
-
+        public DbSet<VentaProducto> DetalleVentas { get; set; }
+        public DbSet<Auditoria> Auditorias { get; set; }
+        public DbSet<Impuesto> Impuestos { get; set; }
+        public DbSet<Precio> Precios { get; set; }
+        public DbSet<ValorDollar> ValorDollars { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Producto>(entity =>

@@ -17,27 +17,13 @@ namespace MasterTrade.Modelo.Entidades
         [MaxLength(100)]
         public string Nombre { get; set; }
         public int Cantidad { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
-        public decimal PorcentajeGanancia { get; set; }
-        [Column(TypeName ="decimal(12,2)")]
-        public decimal ValorDolar { get; set; }
-        [Column(TypeName = "decimal(12,2)")]
-        public decimal Precio1 { get; set; }
-        [Column(TypeName = "decimal(12,2)")]
-        public decimal Precio2 { get; set; }
-        [Column(TypeName = "decimal(12,2)")]
-        public decimal Precio3 { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
-        public decimal Impuesto { get; set; }
-        [MaxLength(200)]
-        public string? Descripcion { get; set; }
-        [MaxLength(250)]
-        public string? Imagen { get; set; }
-       public bool Visible{ get; set; }
         public int? StockMax { get; set; }
         public int? StockMin { get; set; }
 
+
+
         //relations
+        public virtual ICollection<Precio> Precios { get; private set; } = new ObservableCollection<Precio>();
         public virtual ICollection<CompraProducto> ComprasProductos { get; private set; } = new ObservableCollection<CompraProducto>();
         public virtual ICollection<VentaProducto> VentasProductos { get; private set; } = new ObservableCollection<VentaProducto>();
     }
