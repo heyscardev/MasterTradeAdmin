@@ -1,6 +1,6 @@
 ﻿
 using MasterTrade.Controlador.GlobalLogica;
-using MasterTrade.Vista.Reutilizable;
+
 using System.Linq;
 
 using System.Windows.Controls;
@@ -16,7 +16,7 @@ namespace MasterTrade.Vista.Clientes
         public PrincipalCliente()
         {
             InitializeComponent();
-            datos.Child = InputDataEntidad.getInstance();
+          
             actualizar_datos();
         }
         private void actualizar_datos()

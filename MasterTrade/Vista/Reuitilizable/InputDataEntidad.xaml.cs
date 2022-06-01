@@ -33,6 +33,7 @@ namespace MasterTrade.Vista.Reutilizable
                 _instance = new InputDataEntidad();
             return _instance;
         }
+        /*
         public static InputDataEntidad getInstance(Cliente cliente)
         {
             var input = InputDataEntidad.getInstance();
@@ -104,5 +105,6 @@ namespace MasterTrade.Vista.Reutilizable
                 imagen.Source = (new BitmapImage(new Uri(file.FileName, UriKind.Absolute)));
             }
         }
+        */
     }
 }

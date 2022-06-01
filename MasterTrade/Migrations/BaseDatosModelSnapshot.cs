@@ -23,14 +23,6 @@ namespace MasterTrade.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Estacion")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<bool?>("EstadoBorrado")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<DateTime>("FechaActualizacion")
                         .HasColumnType("datetime");
 
@@ -44,8 +36,8 @@ namespace MasterTrade.Migrations
 
                     b.Property<string>("Observacion")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(150)
+                        .HasColumnType("varchar(150)");
 
                     b.Property<string>("Operacion")
                         .IsRequired()
@@ -55,11 +47,14 @@ namespace MasterTrade.Migrations
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
+                    b.Property<bool?>("visible")
+                        .HasColumnType("tinyint(1)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable("Auditoria");
+                    b.ToTable("Auditorias");
                 });
 
             modelBuilder.Entity("MasterTrade.Modelo.Entidades.Cliente", b =>
@@ -76,18 +71,11 @@ namespace MasterTrade.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
 
-                    b.Property<bool?>("EstadoBorrado")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<DateTime>("FechaActualizacion")
                         .HasColumnType("datetime");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime");
-
-                    b.Property<string>("Imagen")
-                        .HasMaxLength(250)
-                        .HasColumnType("varchar(250)");
 
                     b.Property<string>("NumeroIdentificacion")
                         .IsRequired()
@@ -106,6 +94,9 @@ namespace MasterTrade.Migrations
                     b.Property<int>("TipoIdentificacion")
                         .HasColumnType("int");
 
+                    b.Property<bool?>("visible")
+                        .HasColumnType("tinyint(1)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NumeroIdentificacion")
@@ -123,9 +114,6 @@ namespace MasterTrade.Migrations
                     b.Property<string>("Descripcion")
                         .HasMaxLength(200)
                         .HasColumnType("varchar(200)");
-
-                    b.Property<bool?>("EstadoBorrado")
-                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime>("FechaActualizacion")
                         .HasColumnType("datetime");
@@ -148,6 +136,9 @@ namespace MasterTrade.Migrations
                     b.Property<decimal>("ValorDolar")
                         .HasColumnType("decimal(12,2)");
 
+                    b.Property<bool?>("visible")
+                        .HasColumnType("tinyint(1)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProveedorId");
@@ -167,17 +158,14 @@ namespace MasterTrade.Migrations
                     b.Property<int>("CompraId")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("EstadoBorrado")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<DateTime>("FechaActualizacion")
                         .HasColumnType("datetime");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime");
 
-                    b.Property<decimal>("Impuesto")
-                        .HasColumnType("decimal(5,2)");
+                    b.Property<int>("ImpuestoId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Precio")
                         .HasColumnType("decimal(12,2)");
@@ -185,11 +173,21 @@ namespace MasterTrade.Migrations
                     b.Property<int>("ProductoId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ValorDollarId")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("visible")
+                        .HasColumnType("tinyint(1)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CompraId");
 
+                    b.HasIndex("ImpuestoId");
+
                     b.HasIndex("ProductoId");
+
+                    b.HasIndex("ValorDollarId");
 
                     b.ToTable("CompraProductos");
                 });
@@ -209,7 +207,32 @@ namespace MasterTrade.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Impuesto");
+                    b.ToTable("Impuestos");
+                });
+
+            modelBuilder.Entity("MasterTrade.Modelo.Entidades.Precio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("PorcentajeCredito")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<decimal>("PorcentajeGeneral")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<decimal>("PorcentajeMayorista")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<int>("ProductoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductoId");
+
+                    b.ToTable("Precios");
                 });
 
             modelBuilder.Entity("MasterTrade.Modelo.Entidades.Producto", b =>
@@ -231,42 +254,16 @@ namespace MasterTrade.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("Descripcion")
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<bool?>("EstadoBorrado")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<DateTime>("FechaActualizacion")
                         .HasColumnType("datetime");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime");
 
-                    b.Property<string>("Imagen")
-                        .HasMaxLength(250)
-                        .HasColumnType("varchar(250)");
-
-                    b.Property<decimal>("Impuesto")
-                        .HasColumnType("decimal(5,2)");
-
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
-
-                    b.Property<decimal>("PorcentajeGanancia")
-                        .HasColumnType("decimal(5,2)");
-
-                    b.Property<decimal>("Precio1")
-                        .HasColumnType("decimal(12,2)");
-
-                    b.Property<decimal>("Precio2")
-                        .HasColumnType("decimal(12,2)");
-
-                    b.Property<decimal>("Precio3")
-                        .HasColumnType("decimal(12,2)");
 
                     b.Property<int?>("StockMax")
                         .HasColumnType("int");
@@ -274,10 +271,7 @@ namespace MasterTrade.Migrations
                     b.Property<int?>("StockMin")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("ValorDolar")
-                        .HasColumnType("decimal(12,2)");
-
-                    b.Property<bool>("Visible")
+                    b.Property<bool?>("visible")
                         .HasColumnType("tinyint(1)");
 
                     b.HasKey("Id");
@@ -298,26 +292,15 @@ namespace MasterTrade.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("varchar(200)");
 
-                    b.Property<string>("Descripcion")
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
-
                     b.Property<string>("Direccion")
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
-
-                    b.Property<bool?>("EstadoBorrado")
-                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime>("FechaActualizacion")
                         .HasColumnType("datetime");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime");
-
-                    b.Property<string>("Imagen")
-                        .HasMaxLength(250)
-                        .HasColumnType("varchar(250)");
 
                     b.Property<string>("NumeroIdentificacion")
                         .IsRequired()
@@ -335,6 +318,9 @@ namespace MasterTrade.Migrations
 
                     b.Property<int>("TipoIdentificacion")
                         .HasColumnType("int");
+
+                    b.Property<bool?>("visible")
+                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("Id");
 
@@ -368,18 +354,11 @@ namespace MasterTrade.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
 
-                    b.Property<bool?>("EstadoBorrado")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<DateTime>("FechaActualizacion")
                         .HasColumnType("datetime");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime");
-
-                    b.Property<string>("Imagen")
-                        .HasMaxLength(250)
-                        .HasColumnType("varchar(250)");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -416,6 +395,9 @@ namespace MasterTrade.Migrations
                         .HasColumnType("int")
                         .HasDefaultValue(2);
 
+                    b.Property<bool?>("visible")
+                        .HasColumnType("tinyint(1)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NombreUsuario")
@@ -427,6 +409,32 @@ namespace MasterTrade.Migrations
                     b.ToTable("Usuarios");
                 });
 
+            modelBuilder.Entity("MasterTrade.Modelo.Entidades.ValorDollar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Actual")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("FechaActualizacion")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("datetime");
+
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("decimal(11,2)");
+
+                    b.Property<bool?>("visible")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ValorDollars");
+                });
+
             modelBuilder.Entity("MasterTrade.Modelo.Entidades.Venta", b =>
                 {
                     b.Property<int>("Id")
@@ -435,9 +443,6 @@ namespace MasterTrade.Migrations
 
                     b.Property<int>("ClienteId")
                         .HasColumnType("int");
-
-                    b.Property<bool?>("EstadoBorrado")
-                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime>("FechaActualizacion")
                         .HasColumnType("datetime");
@@ -454,11 +459,8 @@ namespace MasterTrade.Migrations
                     b.Property<int>("NFactura")
                         .HasColumnType("int");
 
-                    b.Property<int>("NombreVendedor")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("ValorDolar")
-                        .HasColumnType("decimal(12,2)");
+                    b.Property<bool?>("visible")
+                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("Id");
 
@@ -476,17 +478,14 @@ namespace MasterTrade.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("EstadoBorrado")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<DateTime>("FechaActualizacion")
                         .HasColumnType("datetime");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime");
 
-                    b.Property<decimal>("Impuesto")
-                        .HasColumnType("decimal(12,2)");
+                    b.Property<int>("ImpuestoId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Precio")
                         .HasColumnType("decimal(12,2)");
@@ -494,22 +493,32 @@ namespace MasterTrade.Migrations
                     b.Property<int>("ProductoId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ValorDollarId")
+                        .HasColumnType("int");
+
                     b.Property<int>("VentaId")
                         .HasColumnType("int");
 
+                    b.Property<bool?>("visible")
+                        .HasColumnType("tinyint(1)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ImpuestoId");
 
                     b.HasIndex("ProductoId");
 
+                    b.HasIndex("ValorDollarId");
+
                     b.HasIndex("VentaId");
 
-                    b.ToTable("DetalleVenta");
+                    b.ToTable("DetalleVentas");
                 });
 
             modelBuilder.Entity("MasterTrade.Modelo.Entidades.Auditoria", b =>
                 {
                     b.HasOne("MasterTrade.Modelo.Entidades.Usuario", "Usuario")
-                        .WithMany()
+                        .WithMany("Auditoria")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -536,13 +545,40 @@ namespace MasterTrade.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("MasterTrade.Modelo.Entidades.Impuesto", "Impuesto")
+                        .WithMany("CompraProductos")
+                        .HasForeignKey("ImpuestoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("MasterTrade.Modelo.Entidades.Producto", "Producto")
                         .WithMany("ComprasProductos")
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("MasterTrade.Modelo.Entidades.ValorDollar", "ValorDollar")
+                        .WithMany("CompraProductos")
+                        .HasForeignKey("ValorDollarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Compra");
+
+                    b.Navigation("Impuesto");
+
+                    b.Navigation("Producto");
+
+                    b.Navigation("ValorDollar");
+                });
+
+            modelBuilder.Entity("MasterTrade.Modelo.Entidades.Precio", b =>
+                {
+                    b.HasOne("MasterTrade.Modelo.Entidades.Producto", "Producto")
+                        .WithMany("Precios")
+                        .HasForeignKey("ProductoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Producto");
                 });
@@ -560,9 +596,21 @@ namespace MasterTrade.Migrations
 
             modelBuilder.Entity("MasterTrade.Modelo.Entidades.VentaProducto", b =>
                 {
+                    b.HasOne("MasterTrade.Modelo.Entidades.Impuesto", "Impuesto")
+                        .WithMany("VentaProductos")
+                        .HasForeignKey("ImpuestoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("MasterTrade.Modelo.Entidades.Producto", "Producto")
                         .WithMany("VentasProductos")
                         .HasForeignKey("ProductoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MasterTrade.Modelo.Entidades.ValorDollar", "ValorDollar")
+                        .WithMany("VentaProductos")
+                        .HasForeignKey("ValorDollarId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -572,7 +620,11 @@ namespace MasterTrade.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Impuesto");
+
                     b.Navigation("Producto");
+
+                    b.Navigation("ValorDollar");
 
                     b.Navigation("Venta");
                 });
@@ -587,9 +639,18 @@ namespace MasterTrade.Migrations
                     b.Navigation("CompraProducto");
                 });
 
+            modelBuilder.Entity("MasterTrade.Modelo.Entidades.Impuesto", b =>
+                {
+                    b.Navigation("CompraProductos");
+
+                    b.Navigation("VentaProductos");
+                });
+
             modelBuilder.Entity("MasterTrade.Modelo.Entidades.Producto", b =>
                 {
                     b.Navigation("ComprasProductos");
+
+                    b.Navigation("Precios");
 
                     b.Navigation("VentasProductos");
                 });
@@ -597,6 +658,18 @@ namespace MasterTrade.Migrations
             modelBuilder.Entity("MasterTrade.Modelo.Entidades.Proveedor", b =>
                 {
                     b.Navigation("Compras");
+                });
+
+            modelBuilder.Entity("MasterTrade.Modelo.Entidades.Usuario", b =>
+                {
+                    b.Navigation("Auditoria");
+                });
+
+            modelBuilder.Entity("MasterTrade.Modelo.Entidades.ValorDollar", b =>
+                {
+                    b.Navigation("CompraProductos");
+
+                    b.Navigation("VentaProductos");
                 });
 
             modelBuilder.Entity("MasterTrade.Modelo.Entidades.Venta", b =>
