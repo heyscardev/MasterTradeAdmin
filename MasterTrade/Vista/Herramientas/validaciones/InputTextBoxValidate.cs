@@ -115,15 +115,28 @@ namespace MasterTrade.Vista.Herramientas.validaciones
                 return false;
             }
 
-            if (correo && !this.validEmail())
+            if (correo )
             {
-                MessageBox.Show("el correo: '" + input.Text + "' no es valido intente en formato 'example@example.com'");
-                return false;
+                if (reque && this.isCorreo(this.input.Text)) this.input.BorderBrush = this.colorValid;
+                else if (isVacio(this.input.Text) || this.isCorreo(this.input.Text)) this.input.BorderBrush = this.colorValid;
+                else
+                {
+                    MessageBox.Show("el correo: '" + input.Text + "' no es valido intente en formato 'example@example.com'");
+                    input.BorderBrush = this.colorNegate;
+                    return false;
+                }
+                
             }
-            if (telefono && !validPhone()) return false;
+            if (telefono )
             {
-                MessageBox.Show("el telefono: '" + input.Text + "' no es valido intente en formato '+xx (xxxx) xxx xxxx' o  '(xxxx) xxx xxxx ' ");
-                return false;
+                if (reque && (this.isPhoneInternacional(this.input.Text) || isPhoneNacional(this.input.Text))) this.input.BorderBrush = this.colorValid;
+                else if (isVacio(this.input.Text) || (this.isPhoneInternacional(this.input.Text) || isPhoneNacional(this.input.Text))) this.input.BorderBrush = this.colorValid;
+                else
+                {
+                    input.BorderBrush = this.colorNegate;
+                    MessageBox.Show("el telefono: '" + input.Text + "' no es valido intente en formato '+xx (xxxx) xxx xxxx' o  '(xxxx) xxx xxxx ' ");
+                    return false;
+                }
             }
 
             if (maxLetter != -1 && !validMax())
@@ -205,7 +218,7 @@ namespace MasterTrade.Vista.Herramientas.validaciones
         }
         public bool validEmail()
         {
-            if (this.isCorreo(this.input.Text)|| this.isVacio(this.input.Text)) return true;
+            if (this.isCorreo(this.input.Text)) return true;
             return false;
         }
         public bool validSoloLetras()
@@ -227,7 +240,6 @@ namespace MasterTrade.Vista.Herramientas.validaciones
         private void eventoEmailKeyDown(object sender, KeyEventArgs e)
         {
             
-            if (!this.isKeyCorreo(e.Key)) e.Handled = true;
           
         }
 
@@ -259,11 +271,10 @@ namespace MasterTrade.Vista.Herramientas.validaciones
         {
            this.input.BorderBrush = this.colorNegate;
 
-         
-                if (reque && this.isCorreo(this.input.Text)) this.input.BorderBrush = this.colorValid;
-                else if (isVacio(this.input.Text) || !this.isCorreo(this.input.Text)) this.input.BorderBrush = this.colorNegate;
-            //this.input.Text = this.input.Text.Replace(" ", String.Empty).Replace("", String.Empty);
-            this.input.Select(input.Text.Length, 0);
+            this.input.BorderBrush = this.colorNegate;
+            if (reque && this.isCorreo(this.input.Text)) this.input.BorderBrush = this.colorValid;
+                else if (isVacio(this.input.Text) || this.isCorreo(this.input.Text)) this.input.BorderBrush = this.colorValid;
+          
     
 
         }

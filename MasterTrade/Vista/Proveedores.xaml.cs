@@ -65,8 +65,7 @@ namespace MasterTrade.Vista
             Set_TextBoxes(false);
             gridElementos.Visibility = Visibility.Collapsed;
             */
-            if (vf.formularioisValido()) MessageBox.Show("todo bien");
-            else MessageBox.Show("algo mal");
+            
          
         }
 

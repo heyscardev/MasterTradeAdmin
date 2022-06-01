@@ -10,8 +10,7 @@
     Background="Transparent"
     Loaded="UserControl_Loaded"
     mc:Ignorable="d">
-    <Border Background="{StaticResource azul2}"
-            CornerRadius="15">
+    <Border Background="{StaticResource azul2}" CornerRadius="15">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="550" />
@@ -108,19 +107,19 @@
                     Margin="0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-                    
+
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="14"
                         Style="{StaticResource subtitulo2}"
                         Text="TELÉFONO" />
                     <TextBox
-                            x:Name="txtTelefono"
-                            Width="AUTO"
-                            Height="35"
-                            Margin="0,0,0,20"
-                            Style="{StaticResource TextBoxModerno}"
-                            Tag="Introduzca telefono" />
+                        x:Name="txtTelefono"
+                        Width="AUTO"
+                        Height="35"
+                        Margin="0,0,0,20"
+                        Style="{StaticResource TextBoxModerno}"
+                        Tag="Introduzca telefono" />
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="14"
@@ -194,8 +193,9 @@
                     x:Name="bttnGuardar"
                     Grid.Column="3"
                     Margin="5"
+                    Click="bttnGuardar_Click"
                     Content="MODIFICAR"
-                    Style="{StaticResource EstiloBotonGuardar}" Click="bttnGuardar_Click">
+                    Style="{StaticResource EstiloBotonGuardar}">
                     <Button.ToolTip>
                         <ToolTip
                             Content="GUARDAR PROVEEDOR"
