@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace MasterTrade.Vista.Herramientas.validaciones
 {
-    public class ValidaFormulario
+    public class ValidaFormulario : Validaciones
     {
         private List<InputValidateInterface> inputs = new List<InputValidateInterface>();
         SolidColorBrush colorNegate { get; set; } = Brushes.Red;

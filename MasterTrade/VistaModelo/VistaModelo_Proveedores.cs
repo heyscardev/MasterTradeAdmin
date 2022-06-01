@@ -3,6 +3,7 @@ using MasterTrade.Modelo.Entidades;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 
 namespace MasterTrade.VistaModelo
 {
@@ -14,7 +15,8 @@ namespace MasterTrade.VistaModelo
         {
             if(p == null)return null;
             db.Proveedores.Add(p);
-            db.SaveChanges();
+            MessageBox.Show();
+           // db.SaveChanges();
             return p;
         }
         //modifica 

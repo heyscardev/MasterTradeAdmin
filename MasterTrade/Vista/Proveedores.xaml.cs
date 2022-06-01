@@ -1,5 +1,9 @@
 ﻿
+using MasterTrade.Modelo.Entidades;
+using MasterTrade.Modelo.Enums;
 using MasterTrade.Vista.Herramientas.validaciones;
+using MasterTrade.VistaModelo;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -12,6 +16,7 @@ namespace MasterTrade.Vista
     public partial class Proveedores : UserControl
     {
         private ValidaFormulario vf;
+        private VistaModelo_Proveedores vm;
         public Proveedores()
         {
             InitializeComponent();
@@ -27,7 +32,13 @@ namespace MasterTrade.Vista
             vf.addInput(txtNombre, "").requerido().soloLetras().max(80);
             vf.addInput(txtDireccion, "").max(250);
             vf.addInput(txtTelefono, "").phone().max(20);
-           
+            vm = new VistaModelo_Proveedores();
+            comboDocumento.Items.Add(TipoIdentificacion.V.ToString());
+            comboDocumento.Items.Add(TipoIdentificacion.E.ToString());
+            comboDocumento.Items.Add(TipoIdentificacion.J.ToString());
+            comboDocumento.Items.Add(TipoIdentificacion.G.ToString());
+            comboDocumento.Items.Add(TipoIdentificacion.OTRO.ToString());
+
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -114,7 +125,24 @@ namespace MasterTrade.Vista
 
         private void bttnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (vf.formularioisValido()) MessageBox.Show("formulario valido");
+             if (vf.formularioisValido()) {
+            TipoIdentificacion ti = (TipoIdentificacion)Enum.Parse(typeof(TipoIdentificacion), comboDocumento.SelectedItem.ToString());
+            Proveedor nuevo = new Proveedor()
+            {
+                TipoIdentificacion = ti,
+                NumeroIdentificacion = txtDocumento.Text,
+                RazonSocial = txtNombre.Text
+            };
+            if (!vf.isVacio(txtTelefono.Text)) nuevo.Telefono = txtTelefono.Text.Replace(" ", String.Empty);
+            if (!vf.isVacio(txtCorreo.Text)) nuevo.Correo = txtCorreo.Text.Replace(" ", String.Empty);
+            if (!vf.isVacio(txtDireccion.Text)) nuevo.Direccion = txtDireccion.Text.Replace(" ", String.Empty);
+                vm.crear(nuevo);
+        }
+
+
+
+
+
         }
         //eventos de validacion
 

@@ -57,13 +57,7 @@
                             Width="50"
                             Height="35"
                             Margin="0,0,0,20"
-                            SelectedIndex="0">
-                            <ComboBoxItem>V</ComboBoxItem>
-                            <ComboBoxItem>E</ComboBoxItem>
-                            <ComboBoxItem>J</ComboBoxItem>
-                            <ComboBoxItem>G</ComboBoxItem>
-                            <ComboBoxItem>Otro</ComboBoxItem>
-                        </ComboBox>
+                            SelectedIndex="0" />
                         <TextBox
                             x:Name="txtDocumento"
                             Width="142"

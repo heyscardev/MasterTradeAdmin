@@ -21,8 +21,6 @@ namespace MasterTrade.Modelo.Heredable
         public string RazonSocial { get; set; }
         [MaxLength(200)]
         public string? Correo { get; set; }
-        [Column(Order = 4,TypeName = "Date")]
-        public DateTime FechaNacimento { get; set; }
         [MaxLength(20)]
         [Column(Order = 5)]
         public string? Telefono { get; set; }
@@ -30,8 +28,5 @@ namespace MasterTrade.Modelo.Heredable
         [Column(Order = 6)]
         public string? Direccion { get; set; }
         [MaxLength(250)]
-        [Column(Order = 7)]
-        public string? Imagen { get; set; }
-
     }
 }

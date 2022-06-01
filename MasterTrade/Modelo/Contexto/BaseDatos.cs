@@ -83,7 +83,7 @@ namespace MasterTrade.Modelo.Contexto
                     {
                         case EntityState.Modified:
                             trackable.FechaActualizacion = utcNow;
-                            entry.Property("CreatedAt").IsModified = false;
+                            entry.Property("FechaCreacion").IsModified = false;
                             break;
 
                         case EntityState.Added:
